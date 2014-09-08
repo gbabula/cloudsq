@@ -1,0 +1,141 @@
+/*
+
+    Cloudsq
+
+    main.css
+
+*/
+
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    min-width: 272px;
+}
+
+body {
+    background: #fff url(/assets/images/ps_neutral.png) repeat;
+    padding-left: 3em;
+    padding-right: 3em;
+    position: relative;
+}
+
+li {
+    list-style-type: square;
+}
+
+.unstyled li {
+    list-style-type: none;
+}
+
+mark {
+    background: #E9DCF3;
+}
+
+label {
+    font-weight: bold;
+}
+
+label span {
+    font-weight: normal;
+}
+
+::-moz-selection{ 
+    background: #FAFCFF;
+    color: #333;
+    text-shadow: none;
+}
+
+::selection { 
+    background: #FAFCFF;
+    color: #333;
+    text-shadow: none;
+}
+
+
+/*/ main container /*/
+
+[role="main"] {
+    min-height: 100%;
+    min-width: 220px;
+    position: relative;
+    width: 100%;
+}
+
+[role="main"] .alert {
+    width: 80%;
+    margin: 2em auto 4em auto;
+}
+
+.main-content {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-bottom: 7em;
+    min-height: 50em;
+    padding: 0 2em 10em 2em;
+}
+
+.main-content .loading {
+    margin-right: -64px;
+    position: absolute;
+    right: 50%;
+    top: 158px;
+    z-index: 99;
+}
+
+
+/*/ pages /*/
+
+.home .main-content {
+    background: #FAFCFF;
+    box-shadow: 0 0 1em rgba(152, 189, 245, 0.34);
+    padding: 0;
+}
+
+.login .main-content,
+.user .main-content,
+.profile .main-content,
+.edit .main-content,
+.admin .main-content,
+.register .main-content {
+    background: #fcfcfc;
+    box-shadow: 0 .3em .5em rgba(0, 0, 0, 0.1);
+}
+
+.home .container,
+.admin .container {
+    margin: 0;
+    max-width: 100%;
+}
+
+.admin.user .container {
+    margin: 0 auto;
+    max-width: 50em;
+}
+
+.user .container {
+    padding-bottom: 2em;
+}
+
+.user .main-content {
+    padding-bottom: 0;
+}
+
+.about-page-wrap ul,
+.about-page-wrap ol {
+    color: #666;
+    font-size: 1.4em;
+    line-height: 1.5em;
+    margin-top: 6em;
+}
+
+.about-page-wrap ul li,
+.about-page-wrap ol li {
+    margin-bottom: .8em;
+}
+
+.about-page-wrap ol li {
+    list-style-type: decimal-leading-zero;
+}

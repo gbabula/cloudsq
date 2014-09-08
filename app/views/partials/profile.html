@@ -1,0 +1,16 @@
+<!--
+
+    User Private Profile
+
+    profile.html
+
+-->
+
+
+<section class="cs-profile profile">
+    <h1>Profile <a href="/user/{{ user.username }}"><small>@{{ user.username }}</small></a></h1>
+
+    <div class="cs-include-content" ng-include src="'/views/partials/profile-info.html'"></div>
+
+    <section cs-editor></section>
+</section>

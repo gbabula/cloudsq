@@ -1,0 +1,61 @@
+/*
+
+    Cloudsq
+
+    footer.css
+
+*/
+
+
+.footer-wrap,
+[role="contentinfo"] {
+    display: block;
+    font-size: 1.1em;
+    opacity: 0.4;
+    text-align: center;
+    width: 100%;
+}
+
+[role="contentinfo"] {
+    min-height: 13em;
+    opacity: 0;
+    padding: 2em 0 10em 0;
+    text-shadow: -1px -1px 1px #fff;
+}
+
+.no-touch [role="contentinfo"]:hover,
+.no-touch [role="contentinfo"].active:hover {
+    opacity: 1;
+}
+
+[role="contentinfo"].active {
+    opacity: 0.5;
+}
+
+[role="contentinfo"].inactive {
+    pointer-events: none;
+}
+
+[role="contentinfo"] .user-title {
+    margin: 0 0 1.5em 0;
+    padding: 1em 0;
+}
+
+[role="contentinfo"],
+[role="contentinfo"] p,
+[role="contentinfo"] a,
+.footer-wrap p,
+.footer-wrap a {
+    color: #666;
+}
+
+[role="contentinfo"] p,
+.footer-wrap p {
+    opacity: 0.5;
+}
+
+.no-touch [role="contentinfo"] a:hover,
+.no-touch .footer-wrap a:hover {
+    color: #0088cc;
+    text-decoration: none;
+}

@@ -1,0 +1,77 @@
+<!--
+
+    CloudSq User Login
+
+    login.html
+
+-->
+
+
+<section class="cs-login">
+    <h1>Login</h1>
+
+    <form class="space-top-dbl" ng-submit="login()" name="loginForm">
+        <fieldset class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input 
+                    type="text" 
+                    id="username" 
+                    ng-model="username" 
+                    name="username" 
+                    autocapitalize="off" 
+                    autocomplete="off" 
+                    required
+                    autofocus
+                />
+            </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div class="controls">
+                <input 
+                    type="password" 
+                    id="inputPassword" 
+                    ng-model="password" 
+                    ng-minlength="6" 
+                    name="password" 
+                    autocapitalize="off" 
+                    autocomplete="off" 
+                    required 
+                />
+            </div>
+        </fieldset>
+
+        <fieldset class="control-group hide">
+            <div class="controls">
+                <label class="checkbox">
+                    <input 
+                        type="checkbox" 
+                        ng-model="rememberme" 
+                        name="rememberme" 
+                        checked="checked" 
+                    /> Remember me
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset class="control-group">
+            <div class="controls">
+                <button 
+                    type="button" 
+                    ng-click="back()" 
+                    class="btn">
+                    Cancel
+                </button>
+                <button 
+                    type="submit" 
+                    class="btn btn-primary" 
+                    ng-disabled="loginForm.$invalid">
+                    Go
+                </button>
+            </div>
+        </fieldset>
+    </form>
+
+</section>

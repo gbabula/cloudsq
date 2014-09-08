@@ -1,0 +1,274 @@
+/*
+
+    Cloudsq
+
+    user.css
+
+*/
+
+
+/*/ user profile /*/
+
+.profile .space-none {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.profile .user-info {
+    margin: 0;
+    list-style: none;
+}
+
+.profile .user-info li {
+    margin: 0 0 0.5em 0;
+}
+
+.profile .user-info li p {
+    max-width: 75%;
+}
+
+.profile .user-info li .label-text {
+    display: inline-block;
+    width: 5em;
+}
+
+.profile .user-info li:last-child {
+    margin-bottom: 0;
+}
+
+
+/*/ user info /*/
+
+.user-info-object .pull-left {
+    margin-right: 1.5em;
+}
+
+.no-touch .user-info-object .media-body a:hover {
+    text-decoration: none;
+}
+
+.user-info-object .media-heading {
+    margin: 0 0 1em;
+}
+
+.avatar-object,
+.gravatar-wrap {
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    width: 130px;
+}
+
+.gravatar-wrap .gravatar-icon {
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+/*/ user profile editor /*/
+
+#user-chunk-content {
+    height: 18em;
+    margin: 0 0 2em 0;
+    padding: 2%;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.insert-content {
+    padding: 1em 0;
+}
+
+.content-chunk {
+    position: relative;
+}
+
+.content-chunk .delete-chunk {
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.content-chunk.preview {
+    margin-top: 6em;
+}
+
+.content-chunk.preview:hover:before,
+.content-chunk.preview.active:before {
+    color: #006dcc;
+}
+
+.content-chunk.preview:before {
+    content: "•";
+    color: #e3e3e3;
+    position: absolute;
+    top: -1.2em;
+    font-size: 3em;
+    left: 50%;
+    margin-left: -.3em;
+}
+
+.user-post-setting {
+    background: rgb(219, 219, 219);
+    padding: .5em 1em;
+    border-radius: 4px;
+    opacity: 0.4;
+}
+
+.no-touch .user-post-setting:hover {
+    opacity: 1;
+}
+
+.user-post-setting .radio.inline {
+    margin: 2px 6px 0 0;
+    padding-top: 0;
+}
+
+.user-post-setting .radio.inline input {
+    margin-top: 2px;
+}
+
+.self-destruct {
+    color: red;
+}
+
+
+/*/ user public profile /*/
+
+.user-content {
+    margin: 0;
+}
+
+.user-content * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.user-content h1 {
+    font-size: 2em;
+    margin-top: 0;
+}
+
+.user-content h1,
+.user-content h2,
+.user-content h3,
+.user-content h4,
+.user-content h5,
+.user-content h6,
+.user-content ul,
+.user-content ol,
+.user-content blockquote {
+    max-width: 86%;
+}
+
+.user-content img {
+    background-color: #ddd;
+    border: 1em solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 .2em .1em rgba(0, 0, 0, .1);
+    display: block;
+    margin: 1.2em auto;
+}
+
+.user-content article {
+    padding-bottom: 5em;
+}
+
+.user-content article,
+.user-content article li {
+    font-size: 17px;
+    line-height: 1.7em;
+}
+
+.user-content article li {
+    margin-bottom: .3em;
+}
+
+.user-content .content-chunk-data {
+    border-top: 1px solid #ddd;
+    padding: 1em 1em 0 0;
+    position: absolute;
+    bottom: 1em;
+    right: 0;
+    text-align: right;
+    opacity: 0.4;
+    max-width: 100%;
+    width: 100%;
+}
+
+.user-content .content-chunk-data p {
+    margin: 0;
+}
+
+.no-touch .user-content .content-chunk-data:hover {
+    opacity: 1;
+}
+
+.user-content p {
+    line-height: 2em;
+    margin: 0 2em 2em 0;
+}
+
+.user-content p:last-child {
+    margin-bottom: 0;
+}
+
+.user-content ul {
+    margin-bottom: inherit;
+}
+
+.user-content > li {
+    list-style-type: none;
+    position: relative;
+}
+
+.user-content > li:first-child {
+    margin-top: 0;
+}
+
+.user-content > li:first-child:before {
+    display: none;
+}
+
+.user-page footer {
+    margin-top: 10em;
+}
+
+.user-controls .btn {
+    position: relative;
+}
+
+.user-controls .btn-home {
+    z-index: 3;
+}
+
+.user-controls .btn-success {
+    z-index: 2;
+}
+
+.user-controls .btn-danger {
+    z-index: 1;
+}
+
+
+/* square detail */
+
+.square-detail {
+    position: relative;
+}
+
+.square-detail .avatar-object {
+    left: 17em;
+    position: absolute;
+    top: 6.6em;
+}

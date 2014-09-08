@@ -1,0 +1,78 @@
+<!--
+
+    User Profile Info
+
+    profile-info.html
+
+-->
+
+
+<article class="well well-large user-info user-info-object">
+    <div class="media">
+        <a href="/profile" class="pull-left avatar-object">
+            <gravatar-image 
+                class="gravatar-wrap loading-bg" 
+                data-email="user.email" 
+                data-size="120" 
+                data-rating="pg" 
+                data-default="mm" 
+                data-secure="true" 
+                ng-show="user.email">
+            </gravatar-image>
+        </a>
+
+        <div class="media-body">
+            <h4 class="media-heading">Account</h4>
+
+            <ul class="user-info">
+                <li>
+                    <strong class="label-text">Chunks:</strong>
+                    <a href="/user/{{ cloudSquareUser.username }}">
+                        <span class="label label-success">{{ user.chunks.length }}</span>
+                    </a>
+                </li>
+                <li>
+                    <strong class="label-text">Points:</strong>
+                    <span class="label label-inverse">{{ (user.chunks.length * 2) / .5 }}</span>
+                </li>
+                <li>
+                    <strong class="label-text">Level:</strong>
+                    <span class="label" ng-class="{'label-info': user.role == userRoles.user, 
+                        'label-success': user.role == userRoles.admin}">{{ getUserRoleText(user.role) }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>
+
+<div class="cs-user-controls user-controls space-top">
+    <a href="/user/{{ user.username }}" 
+        class="btn btn-inverse">
+        View Public Profile
+    </a>
+    <a href="/profile" 
+        class="btn btn-success none" 
+        ng-class="toggleCustomClass('profile/settings', 'show', 'hide')">
+        Profile
+    </a>
+    <a href="/edit/{{ user._id.$oid }}" 
+        class="btn btn-success">
+        Edit Square
+    </a>
+    <a href="/profile/settings" 
+        class="btn btn-info" 
+        ng-class="toggleCustomClass('profile/settings', 'hide', 'show')">
+        Settings
+    </a>
+    <a href="/admin" 
+        class="btn btn-danger hidden-phone" 
+        ng-show="user.role == userRoles.admin">
+        Admin
+    </a>
+    <a href="/logout" 
+        class="btn btn-danger hidden-phone" 
+        ng-click="logout()" 
+        ng-hide="user.role == userRoles.admin">
+        Logout
+    </a>
+</div>

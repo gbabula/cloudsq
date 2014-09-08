@@ -1,0 +1,160 @@
+<!--
+
+    Square Detail
+
+    square-detail.html
+
+-->
+
+
+<section class="cs-square-detail square-detail">
+
+    <article class="space-btm-dbl ng-cloak" ng-show="userSquareRegister">
+        <h1>Register <small ng-show="cloudSquareUser.username">
+            @<span ng-bind="cloudSquareUser.username"></span></small></h1>
+    </article>
+
+    <article class="space-btm-dbl ng-cloak" ng-hide="userSquareRegister">
+        <h1>Edit Square 
+            <a href="/user/{{ cloudSquareUser.username }}">
+                <small ng-show="cloudSquareUser.username">
+                    @<span ng-bind="cloudSquareUser.username"></span></small>
+            </a>
+        </h1>
+    </article>
+
+
+    <div class="avatar-object">
+        <gravatar-image 
+            class="gravatar-wrap" 
+            data-email="cloudSquareUser.email" 
+            data-size="120" 
+            data-rating="pg" 
+            data-default="mm" 
+            data-secure="true" 
+            ng-show="cloudSquareUser.email">
+        </gravatar-image>
+    </div>
+
+    <form name="squareDetailForm">
+        <fieldset class="control-group" 
+            ng-class="{ error: squareDetailForm.username.$invalid }">
+            <label for="username">Username</label>
+
+            <div class="input-prepend">
+                <span class="add-on">@</span>
+                <input 
+                    type="text" 
+                    name="username" 
+                    id="username" 
+                    ng-model="cloudSquareUser.username" 
+                    ng-pattern="/^[a-z]+$/" 
+                    ng-readonly="!userSquareRegister" 
+                    ng-init="cloudSquareUser.username = you" 
+                    ng-trim="false" 
+                    ng-maxlength="14" 
+                    maxlength="14" 
+                    required
+                    autofocus
+                />
+            </div>
+
+            <span ng-show="squareDetailForm.username.$error.required" 
+                class="hidden-phone help-inline">Required</span>
+            <span ng-show="squareDetailForm.username.$invalid" 
+                class="hidden-phone help-inline">(no special characters)</span>
+        </fieldset>
+
+        <fieldset class="control-group" 
+            ng-class="{ error: squareDetailForm.email.$invalid }">
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                ng-model="cloudSquareUser.email" 
+                autocapitalize="off" 
+                autocomplete="off" 
+                required 
+            />
+            <span ng-show="squareDetailForm.email.$error.required" 
+                class="hidden-phone help-inline">Required</span>
+            <span ng-show="squareDetailForm.email.$error.email" 
+                class="hidden-phone help-inline">Not a valid email</span>
+        </fieldset>
+
+        <fieldset class="control-group" 
+            ng-class="{ error: squareDetailForm.password.$invalid }" 
+            ng-show="userSquareRegister">
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                ng-model="cloudSquareUser.password" 
+                id="password" 
+                ng-minlength="6" 
+                name="password" 
+                autocapitalize="off" 
+                autocomplete="off" 
+                required 
+            />
+            <span ng-show="squareDetailForm.password.$error.required" 
+                class="hidden-phone help-inline">Required</span>
+            <span ng-show="squareDetailForm.password.$invalid" 
+                class="hidden-phone help-inline">(minimum 6 characters)</span>
+        </fieldset>
+
+        <fieldset class="control-group" ng-class="{ error: squareDetailForm.site.$invalid }">
+            <label for="site">Cloudsq URL</label>
+            <input 
+                type="text" 
+                name="site" 
+                id="site" 
+                ng-model="cloudSquareUser.site" 
+                ng-readonly="true" 
+                required 
+            />
+            <span ng-show="squareDetailForm.site.$error.required" 
+                class="hidden-phone help-inline">Required</span>
+            <span ng-show="squareDetailForm.site.$error.url" 
+                class="hidden-phone help-inline">Not a URL</span>
+        </fieldset>
+
+        <fieldset ng-hide="userSquareRegister">
+            <label for="description">Description</label>
+            <textarea 
+                rows="6" 
+                name="description" 
+                id="description" 
+                ng-maxlength="200" 
+                maxlength="200" 
+                ng-pattern="/.{6,}/" 
+                placeholder="Describe your Square in 200 characters." 
+                ng-model="cloudSquareUser.description">
+            </textarea>
+        </fieldset>
+
+        <fieldset>
+            <button 
+                type="submit" 
+                ng-click="save()" 
+                ng-disabled="isClean() || squareDetailForm.$invalid" 
+                class="btn btn-primary">
+                Save
+            </button>
+            <button 
+                type="button" 
+                ng-click="back()" 
+                class="btn">
+                Cancel
+            </button>
+            <button 
+                type="button" 
+                ng-click="destroy()" 
+                ng-show="cloudSquareUser._id" 
+                class="btn btn-danger">
+                Delete Account
+            </button>
+        </fieldset>
+    </form>
+
+</section>

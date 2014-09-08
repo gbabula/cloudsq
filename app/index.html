@@ -1,0 +1,278 @@
+<!--
+
+
+
+              _____                    _____
+              _____                    _____
+             /\    \                  /\    \
+            /::\    \                /::\    \
+           /::::\    \              /::::\    \
+          /::::::\    \            /::::::\    \
+         /:::/\:::\    \          /:::/\:::\    \
+        /:::/  \:::\    \        /:::/__\:::\    \
+       /:::/    \:::\    \       \:::\   \:::\    \
+      /:::/    / \:::\    \    ___\:::\   \:::\    \
+     /:::/    /   \:::\    \  /\   \:::\   \:::\    \
+    /:::/____/     \:::\____\/::\   \:::\   \:::\____\
+    \:::\    \      \::/    /\:::\   \:::\   \::/    /
+     \:::\    \      \/____/  \:::\   \:::\   \/____/
+      \:::\    \               \:::\   \:::\    \
+       \:::\    \               \:::\   \:::\____\
+        \:::\    \               \:::\  /:::/    /
+         \:::\    \               \:::\/:::/    /
+          \:::\    \               \::::::/    /
+           \:::\____\               \::::/    /
+            \::/    /                \::/    /
+             \/____/                  \/____/
+              _____                    _____
+
+
+
+
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="cloudsqApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="cloudsqApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="cloudsqApp" ng-controller="AppCtrl"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="cloudsqApp" ng-controller="AppCtrl"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title ng-bind="currentPage().title" ng-value="currentPage().title">CloudSquare - Cloudsq.com</title>
+
+    <meta name="description" content="CloudSquare is a minimal user platform." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <base href="/" />
+    <!--<link rel="stylesheet" href="/styles/bootstrap.css" />-->
+    <!--<link rel="stylesheet" href="/styles/bootstrap-responsive.css" />-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
+    <link rel="author" href="/humans.txt" />
+
+    <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="/styles/animate.css" />
+        <link rel="stylesheet" href="/styles/global-classes.css" />
+        <link rel="stylesheet" href="/styles/header.css" />
+        <link rel="stylesheet" href="/styles/cloud-square-listing.css" />
+        <link rel="stylesheet" href="/styles/main.css" />
+        <link rel="stylesheet" href="/styles/user.css" />
+        <link rel="stylesheet" href="/styles/footer.css" />
+        <link rel="stylesheet" href="/styles/media.css" />
+    <!-- endbuild -->
+</head>
+<body ng-show="appInitialized">
+
+    <!--[if lt IE 9]>
+        <p class="chromeframe">You are using an outdated browser. 
+            <a href="http://browsehappy.com/">Upgrade your browser today</a> or 
+            <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> 
+            to better experience this site.
+        </p>
+    <![endif]-->
+
+    <main class="clearfix" id="main" ng-class="currentPage().pageClass" role="main">
+
+        <div class="main-content backface">
+            <div class="loading ng-cloak" ng-show="loading" title="Loading..."></div>
+
+            <header id="top" scroll ng-class="{ min: boolChangeClass }">
+                <nav
+                    class="navigation-primary smooth {{ navStatus }}"
+                    ng-click="navStatus = 'inactive'"
+                    ng-init="navStatus = 'inactive'">
+                    <ul class="unstyled" role="menu" aria-labelledby="mainMenu">
+                        <li>
+                            <a href="/" ng-class="navClass('home')">Home</a>
+                        </li>
+                        <li>
+                            <a href="/about" ng-class="navClass('about')">About Cloudsq</a>
+                        </li>
+                        <section class="space-top">
+                            <div ng-hide="user.username">
+                                <li>
+                                    <a href="/login"
+                                        ng-class="navClass('login')">
+                                        <i class="icon-user icon-white"></i> Login
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/register"
+                                        ng-class="navClass('register')">
+                                        <i class="icon-user icon-white"></i> Register
+                                    </a>
+                                </li>
+                            </div>
+                            <div ng-show="user.username">
+                                <li>
+                                    <a href="/profile"
+                                        ng-class="navClass('profile')">
+                                        <i class="icon-user icon-white"></i> Profile
+                                    </a>
+                                </li>
+                                <li ng-show="user._id">
+                                    <a href="/edit/{{ user._id.$oid }}"
+                                        ng-class="navClass('edit/{{ user._id.$oid }}')">
+                                        <i class="icon-th-large icon-white"></i> Edit Square
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/profile/settings"
+                                        ng-class="navClass('profile/settings')">
+                                        <i class="icon-wrench icon-white"></i> Settings
+                                    </a>
+                                </li>
+                                <div ng-show="user.role == userRoles.admin">
+                                    <li>
+                                        <a href="/admin"
+                                            ng-class="navClass('admin')">
+                                            <i class="icon-bullhorn icon-white"></i> Admin
+                                        </a>
+                                    </li>
+                                </div>
+                                <li class="space-top">
+                                    <a href="/logout"
+                                        ng-click="logout()">
+                                        <i class="icon-eject icon-white"></i> Logout
+                                    </a>
+                                </li>
+                            </div>
+                        </section>
+                    </ul>
+                </nav>
+
+                <button
+                    id="logo"
+                    class="smooth"
+                    ng-click="toggleNav()"
+                    title="CloudSquare">
+                    <span>cloud.</span>
+                </button>
+
+                <div
+                    class="search-wrap smooth {{ searchStatus }}"
+                    ng-click="navStatus = 'inactive'">
+                    <input
+                        type="search"
+                        ng-model="search"
+                        class="search-query"
+                        ng-pattern="/.{1,}/"
+                        placeholder="Find Squares"
+                        value=""
+                    />
+                </div>
+            </header>
+
+            <noscript>
+                <article class="alert alert-error">
+                    <p><strong>For full functionality, it is necessary to enable JavaScript.</strong></p>
+                    <p class="space-none">Here are the <a href="http://www.enable-javascript.com/"
+                        target="_blank"> instructions how to enable JavaScript in your web browser</a>.</p>
+                </article>
+            </noscript>
+
+            <div class="alert alert-error ng-cloak" ng-show="error">
+                <span>{{ error }}</span>
+            </div>
+
+            <div class="alert ng-cloak" ng-show="warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <span><strong>Warning:</strong> {{ warning }}</span>
+            </div>
+
+            <section
+                class="container"
+                id="ng-view"
+                ng-view
+                ng-click="navStatus = 'inactive'">
+            </section>
+
+        </div>
+
+        <footer class="smooth {{ footerStatus }}" role="contentinfo">
+            <article class="user-title ng-cloak">
+                <h2 class="guest-mode" ng-show="user.role == userRoles.public">
+                    <a href="/register/" class="smooth">Create your square, @guest</a>
+                </h2>
+                <h2 class="user-mode" ng-show="user.role == userRoles.user">
+                    <a href="/profile/" class="smooth">Yo, @{{ user.username }}</a>
+                </h2>
+                <h2 class="admin-mode" ng-show="user.role == userRoles.admin">
+                    <a href="/admin/" class="smooth">Administrator</a>
+                </h2>
+            </article>
+
+            <h4>
+                <a href="/about" title="About CloudSquare">CloudSquare <em>Beta</em></a>
+                <span ng-show="userCount">&mdash;
+                    <a href="/"><strong>{{ userCount }}</strong> Squares Hosted</a></span>
+            </h4>
+
+            <p><em>&copy; 2014 <a href="/">CloudSq.com</a>. All rights reserved.</em></p>
+        </footer>
+
+        <div
+            class="backdrop smooth-tertiary {{ backdropStatus }}"
+            ng-show="backdropStatus">
+        </div>
+
+    </main>
+
+    <!--
+    <script src="/bower_components/underscore/underscore.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular/angular-route.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-animate.js"></script>
+    -->
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-resource.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-cookies.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
+
+    <!-- build:js scripts/scripts.js -->
+        <!-- <script src="/scripts/libs/ios-orientationchange-fix.js"></script> -->
+        <script src="/bower_components/showdown/compressed/showdown.js"></script>
+        <script src="/bower_components/angular-poller/angular-poller.js"></script>
+
+        <script src="/scripts/routingConfig.js"></script>
+        <script src="/scripts/userConfig.js"></script>
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/services/auth-service.js"></script>
+        <script src="/scripts/services/md5-service.js"></script>
+        <script src="/scripts/services/mongolab-service.js"></script>
+        <script src="/scripts/controllers/main.js"></script>
+        <script src="/scripts/controllers/square-list.js"></script>
+        <script src="/scripts/controllers/square-edit.js"></script>
+        <script src="/scripts/controllers/square-register.js"></script>
+        <script src="/scripts/controllers/login.js"></script>
+        <script src="/scripts/controllers/user-settings.js"></script>
+        <script src="/scripts/controllers/user-private-profile.js"></script>
+        <script src="/scripts/controllers/user-public-profile.js"></script>
+        <script src="/scripts/controllers/admin.js"></script>
+        <script src="/scripts/filters/filters.js"></script>
+        <script src="/scripts/directives/directives.js"></script>
+        <script src="/scripts/directives/gravatar-directive.js"></script>
+    <!-- endbuild -->
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-41263027-1', 'cloudsq.com');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>

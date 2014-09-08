@@ -1,0 +1,137 @@
+/*
+
+    Cloudsq
+
+    cloud-square-listing.css
+
+*/
+
+
+.cloud-square-listing {
+    background: #FAFCFF;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+}
+
+.cloud-square-listing li {
+    background: #FAFCFF;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.cloud-square-listing li:nth-child(even) {
+    background: #F5F8FC;
+}
+
+.cloud-square-listing li:hover,
+.cloud-square-listing .selected {
+    background: #F5F9FF;
+    box-shadow: 0 0 1em rgba(152, 189, 245, 0.34);
+    z-index: 2;
+}
+
+.cloud-square-listing li:hover .gravatar-wrap,
+.cloud-square-listing .selected .gravatar-wrap {
+    opacity: 1;
+}
+
+.cloud-square-listing li:hover {
+    -webkit-animation-duration: .4s;
+    -webkit-animation-name: hover-pop;
+    animation-duration: .4s;
+    animation-name: hover-pop;
+}
+
+.cloud-square-listing li:active {
+    box-shadow: inset 0 0 1em rgba(152, 189, 245, 0.34);
+    z-index: 2;
+}
+
+/* main listing anchor */
+
+.cloud-square-listing li a,
+.square-info {
+    display: inline-block;
+    height: 100%;
+    position: relative;
+    vertical-align: middle;
+    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.3);
+    width: 100%;
+}
+
+.cloud-square-listing li a:hover {
+    text-decoration: none;
+}
+
+.cloud-square-listing li:active .square-info .gravatar-wrap {
+    opacity: 0.1;
+}
+
+.cloud-square-listing .square-info .square-description {
+    background: #333;
+    bottom: -10em;
+    display: none;
+    left: 0;
+    opacity: 0;
+    height: 10em;
+    position: absolute;
+    text-align: left;
+    width: 20em;
+}
+
+.square-info {
+    display: table-cell;
+    height: 8em;
+    max-width: 8em;
+    padding: 1em;
+    vertical-align: middle;
+    width: 8em;
+}
+
+.square-info .square-username {
+    position: relative;
+    word-break: break-word;
+    z-index: 2;
+}
+
+.square-info .gravatar-wrap {
+    height: 100%;
+    left: 0;
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.square-info .gravatar-wrap img {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+
+/*/ square detail /*/
+
+.square-detail [type="text"],
+.square-detail [type="email"],
+.square-detail [type="password"] {
+    width: 14em;
+}
+
+[type="password"] {
+    font: small-caption;
+    font-size: 16px;
+}
+
+.square-detail .input-prepend input {
+    width: 12em;
+}
+
+.square-detail textarea,
+.square-detail [name="site"] {
+    width: 22em;
+}

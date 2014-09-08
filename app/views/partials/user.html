@@ -1,0 +1,81 @@
+<!--
+
+    User Public Profile
+
+    user.html
+
+-->
+
+
+<section class="cs-user-page user-page" ng-show="profileInitialized">
+    <div class="cs-user-profile user-profile" ng-show="cloudSquareUser.username">
+        <h1>Profile <a href="/user/{{ cloudSquareUser.username }}">
+            <small>@{{ cloudSquareUser.username }}</small></a></h1>
+
+        <div ng-include src="'/views/partials/user-info.html'"></div>
+
+        <ul class="cs-user-content user-content" ng-show="cloudSquareUser.chunks">
+            <li class="cs-content-chunk content-chunk smooth repeat-item" 
+                ng-repeat="chunk in reverse(cloudSquareUser.chunks)">
+                <article 
+                    class="space-top well well-large" 
+                    id="{{ chunk.tstamp }}" 
+                    data-chunk-tstamp="{{ chunk.tstamp }}" 
+                    data-chunk-setting="{{ chunk.setting }}" 
+                    markdown="chunk.content">
+                </article>
+
+                <button 
+                    type="button" 
+                    class="close smooth delete-chunk"
+                    event-class 
+                    data-event-class="delete" 
+                    data-dismiss="alert" 
+                    ng-click="deleteChunk(chunk.tstamp)"
+                    ng-show="user.username === cloudSquareUser.username">
+                    &times;
+                </button>
+
+                <ul class="inline smooth content-chunk-data">
+                    <li>
+                        <a ng-href="/user/{{ cloudSquareUser.username }}?scrollTo={{ chunk.tstamp }}" 
+                            class="tstamp" data-chunk-tstamp="{{ chunk.tstamp }}">
+                            #
+                        </a>
+                    </li>
+                    <li>
+                        <span class="content-chunk-date muted">{{ chunk.tstamp | date:'shortDate' }}</span>
+                    </li>
+                    <li>
+                        <p class="setting content-chunk-setting" 
+                            data-chunk-setting 
+                            ng-class="{'muted': chunk.setting == 'archive', 'self-destruct': chunk.setting == 'self-destruct'}">
+                            {{ chunk.setting }}
+                        </p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <section ng-hide="cloudSquareUser.chunks">
+            <article class="space-top well well-large">
+                <p class="muted space-none" ng-hide="cloudSquareUser.username == user.username">
+                    <a href="/user/{{ cloudSquareUser.username }}">@{{ cloudSquareUser.username }}</a> 
+                    hasn't created any content chunks yet&hellip;
+                </p>
+                <p class="muted space-none" ng-show="cloudSquareUser.username == user.username">
+                    You haven't created any content chunks yet. 
+                </p>
+            </article>
+        </section>
+
+        <footer class="footer-wrap">
+            <p><em>&copy; 2014  <a href="/user/{{ cloudSquareUser.username }}">@{{ cloudSquareUser.username }}</a>. 
+                All rights reserved.</em></p>
+        </footer>
+    </div>
+
+    <div class="cs-user-profile user-profile user-profile-blank" ng-hide="cloudSquareUser.username">
+        <h1 class="none">Blank Canvas</h1>
+    </div>
+</section>

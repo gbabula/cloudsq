@@ -1,0 +1,37 @@
+<!--
+
+    CloudSq Admin
+
+    admin.html
+
+-->
+
+
+<section class="cs-admin-center">
+    <h1>Admin Control Center</h1>
+
+    <article class="well well-large">
+        <p class="space-none"><strong>{{ users.length }}</strong> Members/Squares</p>
+    </article>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody class="cloudsq-user-list">
+            <tr ng-repeat="cloudSquareUser in users | filter:search" class="repeat-item">
+                <td>{{ cloudSquareUser._id.$oid }}</td>
+                <td><a href="/user/{{ cloudSquareUser.username }}">{{ cloudSquareUser.username }}</a></td>
+                <td>
+                    <span class="label" ng-class="{'label-info': cloudSquareUser.role == userRoles.cloudSquareUser, 'label-success': cloudSquareUser.role == userRoles.admin}">{{ getUserRoleText(cloudSquareUser.role) }}</span>
+                </td>
+                <td><a href="mailto:{{ cloudSquareUser.email }}">{{ cloudSquareUser.email }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

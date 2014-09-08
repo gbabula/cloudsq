@@ -1,0 +1,28 @@
+<!--
+
+    Square Info
+
+    square-info.html
+
+-->
+
+
+<section class="cs-square-info square-info">
+    <span class="cs-square-username square-username">@{{ cloudSquareUser.username }}</span>
+
+    <gravatar-image 
+        class="gravatar-wrap smooth" 
+        data-email="cloudSquareUser.email" 
+        data-size="140" 
+        data-rating="pg" 
+        data-default="blank" 
+        data-secure="true" 
+        ng-show="cloudSquareUser.email">
+    </gravatar-image>
+
+    <article 
+        class="cs-square-description square-description" 
+        ng-show="cloudSquareUser.description">
+        <p>{{ cloudSquareUser.description }}</p>
+    </article>
+</section>

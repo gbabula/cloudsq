@@ -1,0 +1,222 @@
+/*
+
+    Cloudsq
+
+    global-classes.css
+
+*/
+
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.checkbox {
+    font-weight: normal;
+}
+
+.active {
+    opacity: 1;
+}
+
+.none {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inblock,
+.in-block {
+    display: inline-block;
+}
+
+.none.active,
+.btn.active,
+.btn.show {
+    display: inline-block;
+}
+
+.opct-hlf {
+    opacity: 0.5;
+}
+
+.opct-full {
+    opacity: 1;
+}
+
+.opct-none {
+    opacity: 0;
+}
+
+.space-none {
+    margin: 0;
+}
+
+.space-top {
+    margin-top: 1em;
+}
+
+.space-top-dbl {
+    margin-top: 2em;
+}
+
+.space-top-section {
+    margin-top: 12em;
+}
+
+.space-btm {
+    margin-bottom: 1em;
+}
+
+.space-btm-dbl {
+    margin-bottom: 2em;
+}
+
+.pad-rgt {
+    padding-right: 1em;    
+}
+
+.pad-lft {
+    padding-left: 1em;    
+}
+
+.pad-lft-hlf {
+    padding-left: .8em;
+}
+
+.pad-rgt-hlf {
+    padding-right: .8em;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+[hidden], 
+[ng\:cloak], 
+[ng-cloak], 
+[data-ng-cloak], 
+[x-ng-cloak], 
+.ng-cloak, 
+.x-ng-cloak {
+  display: none;
+}
+
+.off-screen {
+    left: -99em;
+    position: absolute;
+}
+
+.loading,
+.loading-bg {
+    background: url(/assets/images/ajax-loader.gif) no-repeat 50% 50%;
+}
+
+.loading {
+    display: block;
+    height: 128px;
+    width: 128px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 50em;
+    padding: 0;
+    position: relative;
+    transform: translateZ(0);
+    width: 100%;
+}
+
+.no-touch .container h1:hover a,
+.no-touch .container h1:hover a small {
+    color: #0088cc;
+    text-decoration: none;
+}
+
+.font-primary,
+.font-primary li,
+.font-primary li {
+    font-size: 1.3em;
+    line-height: 1.3em;
+}
+
+.backface {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.perspective {
+    -webkit-perspective: 1000;
+    perspective: 1000;    
+}
+
+.smooth,
+.smooth-secondary,
+.smooth-tertiary {
+    -webkit-transform: translateZ(0px);
+    -moz-transform: translateZ(0px);
+    -ms-transform: translateZ(0px);
+    -o-transform: translateZ(0px);
+    transform: translateZ(0px);
+    -webkit-transition: .5s linear all;
+    -moz-transition: .5s linear all;
+    -o-transition: .5s linear all;
+    transition: .5s linear all;
+}
+
+.smooth {
+    transition: .6s;
+}
+
+.smooth-secondary {
+    transition: .3s;
+}
+
+.btn .active-value {
+    display: none;
+    left: -6em;
+    opacity: 0;
+    position: relative;
+    width: 0;
+}
+
+.btn.active .active-value {
+    display: inline-block;
+    left: 0;
+    opacity: 1;
+    padding-left: .5em;
+    width: auto;
+}
+
+.well {
+    margin-bottom: 1em;
+}
+
+
+/*/ backdrop /*/
+
+.backdrop {
+    background: rgba(255, 255, 255, 0.8);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+}
+
+.backdrop.secondary {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.backdrop.active {
+    opacity: 1;
+}

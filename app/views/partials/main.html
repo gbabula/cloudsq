@@ -1,0 +1,39 @@
+<!--
+
+    Main Square List
+
+    main.html
+
+-->
+
+
+<section class="cs-listing listing" ng-show="usersInitialized">
+    <ul class="clearfix cloud-square-listing ng-cloak" data-total="{{ users.length }}">
+        <li class="square smooth" ng-hide="user.username">
+            <a href="/register" title="Create an account">
+                <section class="square-info">
+                    <span><strong>+</strong></span>
+                </section>
+            </a>
+        </li><!--
+        --><li class="square smooth repeat-item" id="{{ cloudSquareUser.username }}"
+            ng-repeat="cloudSquareUser in users | filter:search | limitTo:csUserLimit" 
+            ng-class="{selected: cloudSquareUser.username == user.username}">
+            <div ng-switch on="user.role">
+                <a href="/edit/{{ cloudSquareUser._id.$oid }}" ng-switch-when="4">
+                    <div ng-include src="'/views/partials/square-info.html'"></div>
+                </a>
+                <a href="/user/{{ cloudSquareUser.username }}" ng-switch-default>
+                    <div ng-include src="'/views/partials/square-info.html'"></div>
+                </a>
+            </div>
+        </li><!--
+        --><li class="square smooth" ng-hide="user.username">
+            <a href="/register" title="Create an account">
+                <section class="square-info">
+                    <span><strong>+</strong></span>
+                </section>
+            </a>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,64 @@
+<div class="cs-editor-wrap editor-wrap">
+    <section class="well well-large space-top">
+        <form class="clearfix space-none" name="publishForm">
+
+            <textarea 
+                ng-model="user.chunk.content" 
+                ng-change="change()" 
+                ng-minlength="12" 
+                minlength="12" 
+                name="user-chunk-content" 
+                id="user-chunk-content" 
+                placeholder="Use Markdown to create content" 
+                required>
+            </textarea>
+
+            <div class="clearfix">
+                <!--
+                <div class="left user-post-setting smooth">
+                    <label class="radio inline">
+                        <input 
+                            type="radio" 
+                            name="user-post-setting" 
+                            ng-model="user.chunk.setting" 
+                            value="archive" 
+                            required />
+                        Archive
+                    </label>
+                    <label class="radio inline">
+                        <input 
+                            type="radio" 
+                            name="user-post-setting" 
+                            ng-model="user.chunk.setting" 
+                            value="self-destruct" />
+                        Self-Destruct
+                    </label>
+                </div>
+                -->
+
+                <input 
+                    type="submit" 
+                    name="publish" 
+                    id="publish" 
+                    class="right btn btn-primary" 
+                    ng-disabled="isClean() || publishForm.$invalid" 
+                    ng-click="save()" 
+                    value="Publish" 
+                />
+            </div>
+
+        </form>
+    </section>
+
+    <section class="cs-user-content user-content preview well well-large space-top">
+        <article class="cs-content-chunk content-chunk" ng-hide="user.chunk.content">
+            <p class="space-none muted">Chunk preview</p>
+        </article>
+
+        <article 
+            class="cs-content-chunk content-chunk space-none" 
+            markdown="user.chunk.content" 
+            ng-show="user.chunk.content">
+        </article>
+    </section>
+</div>

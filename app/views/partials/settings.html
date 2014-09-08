@@ -1,0 +1,91 @@
+<!--
+
+    User Settings
+
+    settings.html
+
+-->
+
+
+<section class="cs-profile cs-profile-settings">
+    <h1>Settings <a href="/user/{{ user.username }}"><small>@{{ user.username }}</small></a></h1>
+
+    <div ng-include src="'/views/partials/profile-info.html'"></div>
+
+    <form class="clearfix well well-large space-top" name="userSettings">
+        <fieldset class="space-btm-dbl" ng-class="{error: userSettings.avatarOptions.$invalid}">
+            <h4>Avatar</h4>
+
+            <label class="radio">
+                <input 
+                    type="radio" 
+                    name="profile-options" 
+                    id="profile-options-1" 
+                    ng-model="user.userSettings.avatarOptions" 
+                    ng-change="submit()" 
+                    ng-checked="'true'" 
+                    value="profile-avatar-gravatar" 
+                    required 
+                />
+                <span>Pull from <a href="https://secure.gravatar.com/" 
+                    rel="nofollow" target="_blank">Gravatar</a></span>
+            </label>
+
+            <label class="radio">
+                <input 
+                    type="radio" 
+                    name="profile-options" 
+                    id="profile-options-2" 
+                    ng-model="user.userSettings.avatarOptions" 
+                    ng-change="submit()" 
+                    value="profile-avatar-other" 
+                    disabled 
+                />
+                <span>Pull from custom location (Coming Soon)</span>
+            </label>
+        </fieldset>
+
+        <fieldset ng-class="{error: userSettings.systemOptions.$invalid}">
+            <h4>Squares</h4>
+
+            <label class="radio">
+                <input 
+                    type="radio" 
+                    disabled="disabled"
+                    name="system-options" 
+                    ng-checked="'true'" 
+                    ng-model="user.userSettings.systemOptions" 
+                    ng-change="submit()" 
+                    id="system-options-1" 
+                    value="email-yes" 
+                    required 
+                />
+                <span>Display in random order</span>
+            </label>
+
+            <label class="radio">
+                <input 
+                    type="radio" 
+                    disabled="disabled"
+                    name="system-options" 
+                    ng-model="user.userSettings.systemOptions" 
+                    ng-change="submit()" 
+                    id="system-options-2" 
+                    value="email-no" 
+                />
+                <span>Sort by points</span>
+            </label>
+        </fieldset>
+
+        <!-- ng-disabled="isClean() || publishForm.$invalid"  -->
+        <input 
+            type="submit" 
+            disabled="disabled"
+            name="save-settings" 
+            id="save-settings" 
+            class="right btn btn-primary space-top" 
+            ng-click="save()" 
+            value="Save" 
+        />
+    </form>
+</section>

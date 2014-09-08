@@ -1,0 +1,222 @@
+/*
+
+    CloudSq
+
+    animate.css
+
+*/
+
+
+@-webkit-keyframes hover-pop {
+    0%  { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.2); }
+    100% { -webkit-transform: scale(1); }
+}
+
+@-moz-keyframes hover-pop {
+    0%  { -moz-transform: scale(1); }
+    50% { -moz-transform: scale(1.2); }
+    100% { -moz-transform: scale(1); }
+}
+
+@-o-keyframes hover-pop {
+    0%  { -o-transform: scale(1); }
+    50% { -o-transform: scale(1.2); }
+    100% { -o-transform: scale(1); }
+}
+
+@keyframes hover-pop {
+    0%  { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.hover-pop {
+    -webkit-animation-name: hover-pop;
+    -moz-animation-name: hover-pop;
+    -o-animation-name: hover-pop;
+    animation-name: hover-pop;
+}
+
+
+/*/ side bounce /*/
+
+@-webkit-keyframes side-bounce {
+    0%, 20%, 50%, 80%, 100% { -webkit-transform: translateY(0); }
+    40% { -webkit-transform: translateX(-30px); }
+    60% { -webkit-transform: translateX(-15px); }
+}
+
+@-moz-keyframes side-bounce {
+    0%, 20%, 50%, 80%, 100% { -moz-transform: translateY(0); }
+    40% { -moz-transform: translateX(-30px); }
+    60% { -moz-transform: translateX(-15px); }
+}
+
+@-o-keyframes side-bounce {
+    0%, 20%, 50%, 80%, 100% { -o-transform: translateY(0); }
+    40% { -o-transform: translateX(-30px); }
+    60% { -o-transform: translateX(-15px); }
+}
+@keyframes side-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateX(-30px); }
+    60% { transform: translateX(-15px); }
+}
+
+.side-bounce {
+    -webkit-animation-name: side-bounce;
+    -moz-animation-name: side-bounce;
+    -o-animation-name: side-bounce;
+    animation-name: side-bounce;
+}
+
+
+/*/ logo animation /*/
+
+/*
+@-webkit-keyframes logo-animate {
+    0%  { background: #333; }
+    50% { background: #000; }
+    100% { background: #333; }
+}
+
+@-moz-keyframes logo-animate {
+    0%  { background: #333; }
+    50% { background: #000; }
+    100% { background: #333; }
+}
+
+@-o-keyframes logo-animate {
+    0%  { background: #333; }
+    50% { background: #000; }
+    100% { background: #333; }
+}
+
+@keyframes logo-animate {
+    0%  { background: #333; }
+    50% { background: #000; }
+    100% { background: #333; }
+}
+
+.logo-animate {
+    -webkit-animation: logo-animate 8s infinite;
+    -moz-animation: logo-animate 8s infinite;
+    -o-animation: logo-animate 8s infinite;
+    animation: logo-animate 8s infinite;
+
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    animation-delay: 6s;
+}
+*/
+
+/*/ base animation /*/
+
+.animation-with-easing {
+    /* linear animation */
+    transition-timing-function: linear;
+
+    /* in easing animation */
+    transition-timing-function: ease-in;
+
+    /* in-out easing animation */
+    transition-timing-function: ease-in-out;
+
+    /* ease-in-quad easing animation */
+    transition-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+
+    /* ease-in-transition-timing-function: cubic easing animation */
+    transition-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+
+    /* ease-in-out-quart easing animation */
+    transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+    /* ease-in-out-back easing animation */
+    transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+
+/*/ fade /*/
+
+.fade-hide-setup,
+.fade-show-setup {
+    -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s;
+    -moz-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s;
+    -o-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s;
+    transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.8s;
+}
+
+.fade-hide-setup {
+    opacity: 1;
+}
+
+.fade-hide-setup.fade-hide-start {
+    opacity: 0;
+}
+
+.fade-show-setup {
+    opacity: 0;
+}
+
+.fade-show-setup.fade-show-start {
+    opacity: 1;
+}
+
+
+/*/ view enter/leave /*/
+
+/*
+.view-enter-setup,
+.view-leave-setup {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+    transform: translateZ(0);
+}
+
+.view-enter-setup {
+    opacity: 0;
+    left: 100px;
+    width: 100%;
+    position: absolute;
+}
+
+.view-enter-setup.view-enter-start {
+    left: 0;
+    opacity: 1;
+}
+
+.view-leave-setup {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.view-leave-setup.view-leave-start {
+    left: -100px;
+    opacity: 0;
+}
+*/
+
+/*/ custom view enter/leave /*/
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    transform: translateZ(0);
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+    opacity: 1;
+}
