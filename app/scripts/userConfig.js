@@ -16,10 +16,11 @@
         email: '',
         description: '',
         points: 0,
-        role: 1,
         chunks: [],
-        _id: {},
-
+        squares: {
+            like: [],
+            dislike: []
+        }
     };
 
     exports.reserved = [
@@ -28,7 +29,9 @@
         'cloud',
         'cloudsq',
         'cloudsquare',
+        'square',
         'gbabula',
+        'babula',
         'greg',
         'gregbabula'
     ];
@@ -63,6 +66,7 @@
         'dildo',
         'dyke',
         'fag',
+        'facebook',
         'feck',
         'fellate',
         'fellatio',
@@ -92,6 +96,8 @@
         'smegma',
         'spunk',
         'tit',
+        'twit',
+        'twitter',
         'tosser',
         'turd',
         'twat',

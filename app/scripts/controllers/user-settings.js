@@ -10,7 +10,7 @@
 
 
 angular.module('cloudsqApp')
-    .controller('UserSettingsCtrl', function($rootScope, $scope, $location, Project) {
+    .controller('UserSettingsCtrl', function($rootScope, $scope, $location) {
 
         $rootScope.searchStatus = 'inactive';
         $rootScope.footerStatus = 'active';

@@ -16,13 +16,9 @@ angular.module('cloudsqApp')
         $rootScope.searchStatus = 'inactive';
         $rootScope.footerStatus = 'inactive';
 
-        // $scope.cloudSquareUser = userConfig.user;
-
-        console.log(userConfig.user);
-
-        $scope.cloudSquareUser = {};
-        $scope.cloudSquareUser.role = routingConfig.userRoles.user;
-        $scope.cloudSquareUser.username = ' ';
+        $scope.cloudSquareUser = angular.extend(userConfig.base, {
+            role: routingConfig.userRoles.user
+        });
 
         $rootScope.loading = false;
         $scope.userSquareRegister = true;

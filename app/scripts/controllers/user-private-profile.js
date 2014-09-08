@@ -30,7 +30,7 @@ angular.module('cloudsqApp')
         $rootScope.searchStatus = 'inactive';
         $rootScope.footerStatus = 'active';
 
-        $scope.user.chunks = $scope.user.chunks || [];
+        // $scope.user.chunks = $scope.user.chunks || [];
 
         $scope.user.chunk = {};
         $scope.user.chunk.setting = 'archive';

@@ -1,10 +1,10 @@
-/*
-
-    Cloudsq
-
-    services/auth-service.js
-
-*/
+/**
+ * 
+ * @module auth-service
+ * @author Greg Babula [gbabula@gmail.com]
+ * @description
+ * 
+ */
 
 
 'use strict';
@@ -14,9 +14,12 @@ var services = angular.module('cloudsqApp-auth.services', []);
 
 services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
-    var baseUser = userConfig.base,
-        accessLevels = routingConfig.accessLevels,
+    var accessLevels = routingConfig.accessLevels,
         userRoles = routingConfig.userRoles;
+
+    var baseUser = angular.extend(userConfig.base, {
+        role: userRoles.public
+    });
 
     $rootScope.user = $cookieStore.get('user') || baseUser;
     $cookieStore.remove('user');
