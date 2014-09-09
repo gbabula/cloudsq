@@ -33,6 +33,8 @@ angular.module('cloudsqApp')
             console.log('Poll Users');
             console.log(Users.list, Users.count);
             console.log('----------------------');
+            console.log('Current User:', $rootScope.user);
+            console.log('----------------------');
 
             $rootScope.userCount = Users.count;
             $rootScope.loading = false;

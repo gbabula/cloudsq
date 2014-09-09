@@ -3,6 +3,7 @@
  * @module user-settings
  * @author Greg Babula [gbabula@gmail.com]
  * @description
+ * @todo add functionality 
  * 
  */
 
@@ -17,11 +18,6 @@ angular.module('cloudsqApp')
 
         $scope.save = function() {
             console.log('user settings save', $scope.user);
-
-            // $scope.cloudSquareUser = new Project($scope.user);
-            // $scope.cloudSquareUser.update(function() {
-            //     $location.path('/profile/');
-            // });
         };
 
     });

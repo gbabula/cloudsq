@@ -104,11 +104,15 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
 
             function error(response) {
 
-                if(response.status === 401) {
+                if (response.status === 401) {
+
                     $location.path('/login');
                     return $q.reject(response);
+
                 } else {
+
                     return $q.reject(response);
+
                 }
 
             }
@@ -122,7 +126,6 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
         $httpProvider.responseInterceptors.push(interceptor);
 
     }])
-
     .run(['$rootScope', '$location', 'Auth', '$window', '$anchorScroll', '$routeParams',
         function($rootScope, $location, Auth, $window, $anchorScroll, $routeParams) {
 
@@ -130,12 +133,18 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
 
                 $rootScope.error = null;
 
+                // check if user has access
+                // to the new view
                 if (!Auth.authorize(next.access, $rootScope.user.role)) {
 
                     if (Auth.isLoggedIn($rootScope.user)) {
+
                         $location.path('/');
+
                     } else {
+
                         $location.path('/login');
+
                     }
 
                 }

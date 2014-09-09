@@ -8,7 +8,6 @@ Style Guide [https://github.com/airbnb/javascript](https://github.com/airbnb/jav
 ### Setup
 
 ```
-
 npm install
 bower install
 ```
@@ -17,7 +16,6 @@ bower install
 ### Server
 
 ```
-
 node server
 ```
 

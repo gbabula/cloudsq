@@ -54,6 +54,12 @@ var routes = [
         middleware: [UserCtrl.index],
         accessLevel: accessLevels.public
     },
+    {
+        path: '/admin',
+        httpMethod: 'POST',
+        middleware: [ensureAuthenticated, ensureAuthorized],
+        accessLevel: accessLevels.admin
+    },
     // {
     //     path: '/users',
     //     httpMethod: 'GET',
@@ -65,29 +71,32 @@ var routes = [
         path: '/*',
         httpMethod: 'GET',
         middleware: [function(req, res) {
-            var role = userRoles.public,
-                username = '',
-                _id = {
-                    $oid: ''
-                };
 
-            if (req.user) {
-                console.log('req user', req.user);
-                role = req.user.role;
-                username = req.user.username;
-                _id = req.user._id;
-            }
+            // var role = userRoles.public,
+                // username = '',
+                // _id = {
+                    // $oid: ''
+                // };
 
-            res.cookie('user', JSON.stringify({
-                'role': role,
-                'username': username,
-                '_id': _id
-            }));
+            // if (req.user) {
+
+                // role = req.user.role;
+                // username = req.user.username;
+                // _id = req.user._id;
+
+            // }
+
+            // res.cookie('user', JSON.stringify({
+                // 'role': role,
+                // 'username': username,
+                // '_id': _id
+            // }));
 
             // console.log('render');
             // console.log(username, _id);
 
             res.render('index');
+
         }],
         accessLevel: accessLevels.public
     }

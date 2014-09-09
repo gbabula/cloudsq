@@ -10,15 +10,15 @@
 <section class="cs-square-detail square-detail">
 
     <article class="space-btm-dbl ng-cloak" ng-show="userSquareRegister">
-        <h1>Register <small ng-show="cloudSquareUser.username">
-            @<span ng-bind="cloudSquareUser.username"></span></small></h1>
+        <h1>Register <small ng-show="user.username">
+            @<span ng-bind="user.username"></span></small></h1>
     </article>
 
     <article class="space-btm-dbl ng-cloak" ng-hide="userSquareRegister">
         <h1>Edit Square 
-            <a href="/user/{{ cloudSquareUser.username }}">
-                <small ng-show="cloudSquareUser.username">
-                    @<span ng-bind="cloudSquareUser.username"></span></small>
+            <a href="/user/{{ user.username }}">
+                <small ng-show="user.username">
+                    @<span ng-bind="user.username"></span></small>
             </a>
         </h1>
     </article>
@@ -27,12 +27,12 @@
     <div class="avatar-object">
         <gravatar-image 
             class="gravatar-wrap" 
-            data-email="cloudSquareUser.email" 
+            data-email="user.email" 
             data-size="120" 
             data-rating="pg" 
             data-default="mm" 
             data-secure="true" 
-            ng-show="cloudSquareUser.email">
+            ng-show="user.email">
         </gravatar-image>
     </div>
 
@@ -47,10 +47,10 @@
                     type="text" 
                     name="username" 
                     id="username" 
-                    ng-model="cloudSquareUser.username" 
+                    ng-model="user.username" 
                     ng-pattern="/^[a-z]+$/" 
                     ng-readonly="!userSquareRegister" 
-                    ng-init="cloudSquareUser.username = you" 
+                    ng-init="user.username = you" 
                     ng-trim="false" 
                     ng-maxlength="14" 
                     maxlength="14" 
@@ -72,7 +72,7 @@
                 type="email" 
                 name="email" 
                 id="email" 
-                ng-model="cloudSquareUser.email" 
+                ng-model="user.email" 
                 autocapitalize="off" 
                 autocomplete="off" 
                 required 
@@ -89,7 +89,7 @@
             <label for="password">Password</label>
             <input 
                 type="password" 
-                ng-model="cloudSquareUser.password" 
+                ng-model="user.password" 
                 id="password" 
                 ng-minlength="6" 
                 name="password" 
@@ -109,7 +109,7 @@
                 type="text" 
                 name="site" 
                 id="site" 
-                ng-model="cloudSquareUser.site" 
+                ng-model="user.site" 
                 ng-readonly="true" 
                 required 
             />
@@ -129,7 +129,7 @@
                 maxlength="200" 
                 ng-pattern="/.{6,}/" 
                 placeholder="Describe your Square in 200 characters." 
-                ng-model="cloudSquareUser.description">
+                ng-model="user.description">
             </textarea>
         </fieldset>
 
@@ -150,7 +150,7 @@
             <button 
                 type="button" 
                 ng-click="destroy()" 
-                ng-show="cloudSquareUser._id" 
+                ng-show="user._id" 
                 class="btn btn-danger">
                 Delete Account
             </button>

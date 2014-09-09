@@ -16,25 +16,26 @@ angular.module('cloudsqApp')
         $rootScope.searchStatus = 'inactive';
         $rootScope.footerStatus = 'inactive';
 
-        $scope.cloudSquareUser = angular.extend(userConfig.base, {
-            role: routingConfig.userRoles.user
-        });
+        $scope.user = $rootScope.user;
+        // $scope.user = angular.extend(userConfig.base, {
+            // role: routingConfig.userRoles.user
+        // });
 
         $rootScope.loading = false;
         $scope.userSquareRegister = true;
 
-        $scope.$watch('cloudSquareUser.email', function() {
+        $scope.$watch('user.email', function() {
 
-            $scope.cloudSquareUser.email = angular.lowercase($scope.cloudSquareUser.email);
+            $scope.user.email = angular.lowercase($scope.user.email);
 
         });
 
-        $scope.$watch('cloudSquareUser.username', function() {
+        $scope.$watch('user.username', function() {
 
-            var username = angular.lowercase($scope.cloudSquareUser.username || ' ').replace(/\s+/g, '');
+            var username = angular.lowercase($scope.user.username || ' ').replace(/\s+/g, '');
 
-            $scope.cloudSquareUser.username = username;
-            $scope.cloudSquareUser.site = 'http://cloudsq.com/user/' + username + '';
+            $scope.user.username = username;
+            $scope.user.site = 'http://cloudsq.com/user/' + username + '';
 
         });
 
@@ -42,17 +43,7 @@ angular.module('cloudsqApp')
         // auth service 
         $scope.save = function() {
 
-            console.log($scope.cloudSquareUser);
-
-            Auth.register($scope.cloudSquareUser,
-            // Auth.register({
-                // username: $scope.cloudSquareUser.username,
-                // password: $scope.cloudSquareUser.password,
-                // email: $scope.cloudSquareUser.email,
-                // site: $scope.cloudSquareUser.site,
-                // role: $scope.cloudSquareUser.role
-            // },
-            function(res) {
+            Auth.register($scope.user, function(res) {
 
                 $rootScope.user = res;
 

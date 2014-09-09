@@ -19,7 +19,10 @@ angular.module('cloudsqApp')
         $scope.userSquareControl = false;
         $scope.userSquareRegister = false;
 
-        $scope.cloudSquareUser = $rootScope.user;
+        $scope.user = $rootScope.user;
+
+        console.log( $scope.user );
+
 
         // $scope.cloudSquareUser = Users.findByUsername($routeParams.cloudSquareUser);
         // Project.get({id: $routeParams.cloudSquareUserId}, function(cloudSquareUser) {

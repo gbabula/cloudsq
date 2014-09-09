@@ -51,6 +51,8 @@ function addUser(user, callback) {
         return callback('UserNameBanned');
     }
 
+    user.role = userRoles.user;
+
     db.insert('users', user, function(err, data) {
 
         callback(null, data);
@@ -99,6 +101,50 @@ function indexAll() {
     });
 
 }
+
+/**
+ * 
+ * @function update
+ * @description
+ * 
+ */
+// function update() {
+
+    // db.insert('users', user, function(err, data) {
+
+        // callback(null, data);
+
+    // });
+
+    // db.update('list', {}, function(err, data) {
+
+        // users = data;
+
+    // });
+
+// }
+
+/**
+ * 
+ * @function deleteId
+ * @description
+ * 
+ */
+// function deleteId(id) {
+
+    // db.deleteId('users', id, function(err, data) {
+
+        // callback(null, data);
+
+    // });
+
+    // db.deleteId('list', id, function(err, data) {
+
+        // callback(null, data);
+
+    // });
+
+// }
 
 /**
  * 
