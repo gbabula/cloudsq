@@ -21,7 +21,6 @@ angular.module('cloudsqApp')
 
         $scope.user = $rootScope.user;
 
-        console.log( $scope.user );
 
 
         // $scope.cloudSquareUser = Users.findByUsername($routeParams.cloudSquareUser);

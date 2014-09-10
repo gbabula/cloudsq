@@ -22,8 +22,6 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
     });
 
     $rootScope.user = $cookieStore.get('user') || baseUser;
-    $cookieStore.remove('user');
-
     $rootScope.accessLevels = accessLevels;
     $rootScope.userRoles = userRoles;
 
@@ -91,6 +89,8 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
             $http.post('/logout').success(function(){
 
                 $rootScope.user = baseUser;
+                $cookieStore.remove('user');
+
                 success();
 
             }).error(error);

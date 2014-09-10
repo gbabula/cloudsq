@@ -16,6 +16,7 @@ var passport     = require('passport');
 var AuthCtrl     = require('./controllers/auth');
 var UserCtrl     = require('./controllers/user');
 var User         = require('./models/User.js');
+var userConfig   = require('../app/scripts/userConfig');
 var userRoles    = require('../app/scripts/routingConfig').userRoles;
 var accessLevels = require('../app/scripts/routingConfig').accessLevels;
 
@@ -72,29 +73,7 @@ var routes = [
         httpMethod: 'GET',
         middleware: [function(req, res) {
 
-            // var role = userRoles.public,
-                // username = '',
-                // _id = {
-                    // $oid: ''
-                // };
-
-            // if (req.user) {
-
-                // role = req.user.role;
-                // username = req.user.username;
-                // _id = req.user._id;
-
-            // }
-
-            // res.cookie('user', JSON.stringify({
-                // 'role': role,
-                // 'username': username,
-                // '_id': _id
-            // }));
-
-            // console.log('render');
-            // console.log(username, _id);
-
+            res.cookie('user', JSON.stringify(req.user || userConfig.base));
             res.render('index');
 
         }],

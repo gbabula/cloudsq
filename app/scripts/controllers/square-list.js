@@ -26,10 +26,6 @@ angular.module('cloudsqApp')
         } else {
 
             $scope.users = _.shuffle(Users.list);
-
-            // TODO sort users by points
-            // $scope.users = _.sortBy();
-
             $scope.usersInitialized = true;
 
         }

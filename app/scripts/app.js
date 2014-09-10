@@ -52,7 +52,7 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
             access:         access.anon
         });
 
-        $routeProvider.when('/edit/:cloudSquareUserId', {
+        $routeProvider.when('/edit/:cloudSquareUserName', {
             templateUrl:    '/views/partials/square-detail.html',
             controller:     'EditSqCtrl',
             access:         access.user

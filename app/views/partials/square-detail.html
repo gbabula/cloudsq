@@ -10,19 +10,16 @@
 <section class="cs-square-detail square-detail">
 
     <article class="space-btm-dbl ng-cloak" ng-show="userSquareRegister">
-        <h1>Register <small ng-show="user.username">
-            @<span ng-bind="user.username"></span></small></h1>
+        <h1>Register <small ng-show="user.username">@<span ng-bind="user.username"></span></small></h1>
     </article>
 
     <article class="space-btm-dbl ng-cloak" ng-hide="userSquareRegister">
         <h1>Edit Square 
             <a href="/user/{{ user.username }}">
-                <small ng-show="user.username">
-                    @<span ng-bind="user.username"></span></small>
+                <small ng-show="user.username">@<span ng-bind="user.username"></span></small>
             </a>
         </h1>
     </article>
-
 
     <div class="avatar-object">
         <gravatar-image 
@@ -50,7 +47,6 @@
                     ng-model="user.username" 
                     ng-pattern="/^[a-z]+$/" 
                     ng-readonly="!userSquareRegister" 
-                    ng-init="user.username = you" 
                     ng-trim="false" 
                     ng-maxlength="14" 
                     maxlength="14" 

@@ -42,7 +42,7 @@
 
     <title ng-bind="currentPage().title" ng-value="currentPage().title">CloudSquare - Cloudsq.com</title>
 
-    <meta name="description" content="CloudSquare is a minimal user platform." />
+    <meta name="description" content="CloudSquare - the minimal user platform." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -91,56 +91,58 @@
                         <li>
                             <a href="/about" ng-class="navClass('about')">About Cloudsq</a>
                         </li>
-                        <section class="space-top">
-                            <div ng-hide="user.username">
-                                <li>
-                                    <a href="/login"
-                                        ng-class="navClass('login')">
-                                        <i class="icon-user icon-white"></i> Login
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/register"
-                                        ng-class="navClass('register')">
-                                        <i class="icon-user icon-white"></i> Register
-                                    </a>
-                                </li>
-                            </div>
-                            <div ng-show="user.username">
-                                <li>
-                                    <a href="/profile"
-                                        ng-class="navClass('profile')">
-                                        <i class="icon-user icon-white"></i> Profile
-                                    </a>
-                                </li>
-                                <li ng-show="user._id">
-                                    <a href="/edit/{{ user._id.$oid }}"
-                                        ng-class="navClass('edit/{{ user._id.$oid }}')">
-                                        <i class="icon-th-large icon-white"></i> Edit Square
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/profile/settings"
-                                        ng-class="navClass('profile/settings')">
-                                        <i class="icon-wrench icon-white"></i> Settings
-                                    </a>
-                                </li>
-                                <div ng-show="user.role == userRoles.admin">
+                        <li>
+                            <section class="space-top">
+                                <div ng-hide="user.username">
                                     <li>
-                                        <a href="/admin"
-                                            ng-class="navClass('admin')">
-                                            <i class="icon-bullhorn icon-white"></i> Admin
+                                        <a href="/login"
+                                            ng-class="navClass('login')">
+                                            <i class="icon-user icon-white"></i> Login
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/register"
+                                            ng-class="navClass('register')">
+                                            <i class="icon-user icon-white"></i> Register
                                         </a>
                                     </li>
                                 </div>
-                                <li class="space-top">
-                                    <a href="/logout"
-                                        ng-click="logout()">
-                                        <i class="icon-eject icon-white"></i> Logout
-                                    </a>
-                                </li>
-                            </div>
-                        </section>
+                                <div ng-show="user.role == userRoles.user || user.role == userRoles.admin">
+                                    <li>
+                                        <a href="/profile"
+                                            ng-class="navClass('profile')">
+                                            <i class="icon-user icon-white"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li ng-show="user.role == userRoles.user">
+                                        <a href="/edit/{{ user.username }}"
+                                            ng-class="navClass('edit/{{ user.username }}')">
+                                            <i class="icon-th-large icon-white"></i> Edit Square
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/profile/settings"
+                                            ng-class="navClass('profile/settings')">
+                                            <i class="icon-wrench icon-white"></i> Settings
+                                        </a>
+                                    </li>
+                                    <div ng-show="user.role == userRoles.admin">
+                                        <li>
+                                            <a href="/admin"
+                                                ng-class="navClass('admin')">
+                                                <i class="icon-bullhorn icon-white"></i> Admin
+                                            </a>
+                                        </li>
+                                    </div>
+                                    <li class="space-top">
+                                        <a href="/logout"
+                                            ng-click="logout()">
+                                            <i class="icon-eject icon-white"></i> Logout
+                                        </a>
+                                    </li>
+                                </div>
+                            </section>
+                        </li>
                     </ul>
                 </nav>
 
@@ -240,7 +242,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-animate.min.js"></script>
 
     <!-- build:js scripts/scripts.js -->
-        <!-- <script src="/scripts/libs/ios-orientationchange-fix.js"></script> -->
+        <script src="/scripts/libs/ios-orientationchange-fix.js"></script>
         <script src="/bower_components/showdown/compressed/showdown.js"></script>
         <script src="/bower_components/angular-poller/angular-poller.js"></script>
 

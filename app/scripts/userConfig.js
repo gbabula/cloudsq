@@ -16,10 +16,14 @@
         email: '',
         description: '',
         points: 0,
+        role: 1,
         chunks: [],
         squares: {
             like: [],
             dislike: []
+        },
+        _id: {
+            $oid: ''
         }
     };
 

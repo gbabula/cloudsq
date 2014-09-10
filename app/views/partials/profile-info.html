@@ -55,7 +55,7 @@
         ng-class="toggleCustomClass('profile/settings', 'show', 'hide')">
         Profile
     </a>
-    <a href="/edit/{{ user._id.$oid }}" 
+    <a href="/edit/{{ user.username }}" 
         class="btn btn-success">
         Edit Square
     </a>
@@ -71,8 +71,7 @@
     </a>
     <a href="/logout" 
         class="btn btn-danger hidden-phone" 
-        ng-click="logout()" 
-        ng-hide="user.role == userRoles.admin">
+        ng-click="logout()">
         Logout
     </a>
 </div>

@@ -27,10 +27,7 @@ module.exports = {
 
         User.addUser(req.body, function(err, data) {
 
-            // var user = data;
             var user = req.body;
-
-            // console.log('USER ADD USER ---', user);
 
             if (err === 'UserEmailAlreadyExists') {
                 return res.status(403).send('Email already registered');
@@ -53,7 +50,6 @@ module.exports = {
                 if (err) {
                     next(err);
                 } else {
-                    // res.json(200, user);
                     res.json(user);
                 }
 
@@ -88,13 +84,10 @@ module.exports = {
                     return next(err);
                 }
 
-                // TODO fix
                 if (req.body.rememberme) {
-                    // req.session.cookie.maxAge = 1000 * 60 * 60 * 24 * 7;
-                    // res.cookie('user', user, { maxAge: 1000 * 60 * 60 * 24 * 7 });
+                    res.cookie.maxAge = 1000 * 60 * 60 * 24 * 7;
                 }
 
-                // res.json(200, user);
                 res.json(user);
 
             });
