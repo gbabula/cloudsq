@@ -27,10 +27,12 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
     return {
         /**
+         *
          * @method authorize
          * @param {} accessLevel
          * @param {} role
          * @description
+         *
          */
         authorize: function(accessLevel, role) {
 
@@ -38,9 +40,11 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
         },
         /**
+         *
          * @method isLoggedIn
          * @param {Object} user
          * @description
+         *
          */
         isLoggedIn: function(user) {
 
@@ -48,11 +52,13 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
         },
         /**
+         *
          * @method register
          * @param {Object} user
          * @param {Function} success
          * @param {Function} error
          * @description
+         *
          */
         register: function(user, success, error) {
 
@@ -60,11 +66,13 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
         },
         /**
+         *
          * @method login
          * @param {Object} user
          * @param {Function} success
          * @param {Function} error
          * @description
+         *
          */
         login: function(user, success, error) {
 
@@ -79,10 +87,12 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
 
         },
         /**
+         *
          * @method logout
          * @param {Function} success
          * @param {Function} error
          * @description
+         *
          */
         logout: function(success, error) {
 
@@ -99,39 +109,4 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
         accessLevels: accessLevels,
         userRoles: userRoles
     };
-});
-
-services.factory('Users', function($timeout, $resource, poller) {
-
-    return {
-        count: 0,
-        delay: 30000,
-        list: [],
-        resource: $resource('/users'),
-        poll: function(success) {
-
-            var requestPoller = poller.get(this.resource, { delay: this.delay });
-
-            requestPoller.promise.then(null, null, function(data) {
-                success(data);
-            });
-
-        },
-        stop: function() {
-
-            // this.pollerService.stopAll();
-
-        },
-        restart: function() {
-
-            // this.pollerService.restartAll();
-
-        },
-        findByUsername: function(username) {
-
-            return _.find(this.list, function(user) { return user.username === username; });
-
-        }
-    };
-
 });
