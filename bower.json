@@ -8,18 +8,18 @@
       "components"
   ],
   "dependencies": {
-      "angular": "~1.2.1",
-      "angular-route": "~1.2.1",
-      "angular-resource": "~1.2.1",
-      "angular-cookies": "~1.2.1",
-      "angular-sanitize": "~1.2.1",
-      "angular-animate": "~1.2.1",
+      "angular": "~1.2.9",
+      "angular-route": "~1.2.9",
+      "angular-resource": "~1.2.9",
+      "angular-cookies": "~1.2.9",
+      "angular-sanitize": "~1.2.9",
+      "angular-animate": "~1.2.9",
       "angular-poller": "~0.2.4",
-      "underscore": "~1.4.4",
+      "underscore": "~1.7.0",
       "showdown": "~0.3.1"
   },
   "devDependencies": {
-      "angular-mocks": "~1.2.1",
-      "angular-scenario": "~1.2.1"
+      "angular-mocks": "~1.2.9",
+      "angular-scenario": "~1.2.9"
   }
 }
