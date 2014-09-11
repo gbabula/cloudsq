@@ -58,18 +58,34 @@ angular.module('cloudsqApp')
          */
         $scope.save = function() {
 
-            Auth.register($scope.user, function(res) {
+            var user = $scope.user;
 
-                $rootScope.user = res;
+            /**
+             *
+             * @function success
+             * @param {Object} response
+             *
+             */
+            function success(response) {
 
+                $rootScope.user = response; 
                 $location.path('/profile/');
 
-            },
-            function(err) {
+            }
+
+            /**
+             *
+             * @function error
+             * @param {Object} err
+             *
+             */
+            function error(err) {
 
                 $rootScope.error = err;
 
-            });
+            }
+
+            Auth.register(user, success, error);
 
         };
 

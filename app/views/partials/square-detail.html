@@ -146,7 +146,7 @@
             <button 
                 type="button" 
                 ng-click="destroy()" 
-                ng-show="user._id" 
+                ng-show="!userSquareRegister && isLoggedIn" 
                 class="btn btn-danger">
                 Delete Account
             </button>

@@ -19,6 +19,8 @@ var app = angular.module('cloudsqApp', [
     'md5',
     'ui-gravatar',
     'cloudsqApp-auth.services',
+    'cloudsqApp-users.services',
+    'cloudsqApp-user.services',
     'cloudsqApp.directives',
     'cloudsqApp.filters'
 ]);

@@ -38,6 +38,12 @@ var routes = [
         accessLevel: accessLevels.public
     },
     {
+        path: '/edit/*',
+        httpMethod: 'POST',
+        middleware: [ensureAuthenticated, ensureAuthorized],
+        accessLevel: accessLevels.user
+    },
+    {
         path: '/login',
         httpMethod: 'POST',
         middleware: [AuthCtrl.login],

@@ -11,7 +11,7 @@
 
 
 angular.module('cloudsqApp')
-    .controller('EditSqCtrl', function($scope, $rootScope, $location, $routeParams, $window) {
+    .controller('EditSqCtrl', function($scope, $rootScope, $location, Auth, User) {
 
         $rootScope.searchStatus = 'inactive';
         $rootScope.footerStatus = 'active';
@@ -20,24 +20,18 @@ angular.module('cloudsqApp')
         $scope.userSquareRegister = false;
 
         $scope.user = $rootScope.user;
+        $scope.isLoggedIn = Auth.isLoggedIn($scope.user);
 
+        // TODO compare against cached object
+        $scope.isClean = function() {
 
+            // return angular.equals(_original, $scope.user);
 
-        // $scope.cloudSquareUser = Users.findByUsername($routeParams.cloudSquareUser);
-        // Project.get({id: $routeParams.cloudSquareUserId}, function(cloudSquareUser) {
-
-            // _this.original = cloudSquareUser;
-            // $scope.cloudSquareUser = new Project(_this.original);
-
-        // });
-
-        // $scope.isClean = function() {
-
-            // return angular.equals(_this.original, $scope.cloudSquareUser);
-
-        // };
+        };
 
         // $scope.destroy = function() {
+
+            // User.destroy();
 
             // if ($window.confirm('Are you sure you want to delete\nthis account and all data?')) {
                 // _this.original.destroy(function() {
@@ -47,14 +41,16 @@ angular.module('cloudsqApp')
 
         // };
 
-        // $scope.save = function() {
+        $scope.save = function() {
 
-            // $scope.user = $scope.cloudSquareUser;
+            User.update({}, function() {
+                console.log('test');
+            });
 
             // $scope.cloudSquareUser.update(function() {
                 // $location.path('/user/' + $scope.user.username + '');
             // });
 
-        // };
+        };
 
     });

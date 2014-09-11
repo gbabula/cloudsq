@@ -53,6 +53,8 @@ function addUser(user, callback) {
 
     user.role = userRoles.user;
 
+    users.push(user);
+
     db.insert('users', user, function(err, data) {
 
         callback(null, data);

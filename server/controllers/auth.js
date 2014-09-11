@@ -17,11 +17,13 @@ var User       = require('../models/User.js');
 module.exports = {
 
     /**
+     *
      * @method register
      * @param {Object} req
      * @param {Object} res
      * @param {Function} next
      * @description 
+     *
      */
     register: function(req, res, next) {
 
@@ -59,11 +61,13 @@ module.exports = {
 
     },
     /**
+     *
      * @method login
      * @param {Object} req
      * @param {Object} res
      * @param {Function} next
      * @description 
+     *
      */
     login: function(req, res, next) {
 
@@ -96,10 +100,12 @@ module.exports = {
 
     },
     /**
+     *
      * @method logout
      * @param {Object} req
      * @param {Object} res
      * @description 
+     *
      */
     logout: function(req, res) {
 
