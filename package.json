@@ -3,7 +3,7 @@
   "description": "CloudSquare is a minimal user platform.",
   "author": "Greg Babula",
   "homepage": "http://cloudsq.com",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "express": "*",
     "connect": "*",
