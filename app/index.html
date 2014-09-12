@@ -48,17 +48,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
     <base href="/" />
-    <!--
-       - <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-       -->
-    <!--
-       - <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-       -->
-    <!-- <link rel="stylesheet" href="/styles/bootstrap-responsive.css" /> -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" />
     <link rel="author" href="/humans.txt" />
 
     <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="/styles/bootstrap-combined.min.css" />
         <link rel="stylesheet" href="/styles/animate.css" />
         <link rel="stylesheet" href="/styles/global-classes.css" />
         <link rel="stylesheet" href="/styles/header.css" />
@@ -114,9 +107,15 @@
                                 </div>
                                 <div ng-show="user.role == userRoles.user || user.role == userRoles.admin">
                                     <li>
+                                        <a href="/user/{{ user.username }}"
+                                            ng-class="navClass('user/{{ user.username }}')">
+                                            <i class="icon-user icon-white"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="/profile"
                                             ng-class="navClass('profile')">
-                                            <i class="icon-user icon-white"></i> Profile
+                                            <i class="icon-edit icon-white"></i> Editor
                                         </a>
                                     </li>
                                     <li ng-show="user.role == userRoles.user">
