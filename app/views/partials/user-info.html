@@ -40,9 +40,9 @@
     </a>
     <a href="/profile" 
         class="btn btn-success none" 
-        ng-class="{show: cloudSquareUser.username == user.username, 
-        hide: cloudSquareUser.username !== user.username}">
-        Profile
+        ng-class="{ show: cloudSquareUser.username == user.username, 
+        hide: cloudSquareUser.username !== user.username }">
+        Editor
     </a>
 
     <div class="inblock" ng-hide="cloudSquareUser.username == user.username">
@@ -53,7 +53,7 @@
             &nbsp;<i class="icon-thumbs-up icon-white"></i>
             <span class="smooth active-value">Appreciated<span>
         </button>
-        
+
         <button 
             data-square-vote="down" 
             class="btn btn-danger smooth" 

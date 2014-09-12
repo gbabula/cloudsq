@@ -22,7 +22,8 @@ var reservedUsername     = require('../../app/scripts/userConfig').reserved;
 
 // var db = mongodb.init('cloudsquare', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
 var db = mongodb.init('cloudsqmain', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
-
+var collection = 'list';
+// var collection = 'users';
 
 var users = [];
 var localStrategy;
@@ -52,10 +53,11 @@ function addUser(user, callback) {
     }
 
     user.role = userRoles.user;
+    // user.points = ;
 
     users.push(user);
 
-    db.insert('users', user, function(err, data) {
+    db.insert(collection, user, function(err, data) {
 
         callback(null, data);
 
@@ -72,17 +74,11 @@ function addUser(user, callback) {
  */
 function findAll() {
 
-    db.documents('list', {}, function(err, data) {
+    db.documents(collection, {}, function(err, data) {
 
         users = data;
 
     });
-
-    // db.documents('users', {}, function(err, data) {
-
-        // users = data;
-
-    // });
 
     return users;
 
@@ -112,15 +108,9 @@ function indexAll() {
  */
 // function update() {
 
-    // db.insert('users', user, function(err, data) {
+    // db.update(collection, user, function(err, data) {
 
         // callback(null, data);
-
-    // });
-
-    // db.update('list', {}, function(err, data) {
-
-        // users = data;
 
     // });
 
@@ -134,13 +124,7 @@ function indexAll() {
  */
 // function deleteId(id) {
 
-    // db.deleteId('users', id, function(err, data) {
-
-        // callback(null, data);
-
-    // });
-
-    // db.deleteId('list', id, function(err, data) {
+    // db.deleteId(collection, id, function(err, data) {
 
         // callback(null, data);
 
