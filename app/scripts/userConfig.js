@@ -2,7 +2,6 @@
  * 
  * @module userConfig
  * @author Greg Babula [gbabula@gmail.com]
- * @description
  * 
  */
 

@@ -4,8 +4,9 @@
  * @author Greg Babula [gbabula@gmail.com]
  * @description
  * 
+ * @todo set up user methods
+ * 
  */
-
 
 'use strict';
 
@@ -26,7 +27,7 @@ services.factory('User', function() {
         destroy: function(user, success, error) {
 
             success();
-             
+
         },
         /**
          *
@@ -39,7 +40,7 @@ services.factory('User', function() {
         update: function(user, success, error) {
 
             success();
-        
+
         }
     };
 

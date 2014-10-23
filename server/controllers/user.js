@@ -1,7 +1,8 @@
 /**
  *
+ * @module user
  * @author Greg Babula [gbabula@gmail.com]
- * @description
+ * @description user controller
  * 
  */
 

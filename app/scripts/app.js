@@ -1,11 +1,9 @@
-/*
-
-    Cloudsq
-
-    app.js
-
-*/
-
+/**
+ *
+ * @module app
+ * @author Greg Babula [gbabula@gmail.com]
+ *
+ */
 
 'use strict';
 

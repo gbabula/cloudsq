@@ -4,8 +4,9 @@
  * @author Greg Babula [gbabula@gmail.com]
  * @description
  * 
+ * @todo cleanup, keep default chunk in an external file, add additional markdown tutorial, etc...
+ * 
  */
-
 
 'use strict';
 

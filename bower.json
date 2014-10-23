@@ -1,11 +1,12 @@
 {
-  "name": "cloudsq",
+  "name": "CloudSquare",
   "author": "Greg Babula",
   "version": "0.3.0",
   "ignore": [
       "**/.*",
       "node_modules",
-      "components"
+      "components",
+      "app/bower_components"
   ],
   "dependencies": {
       "angular": "~1.2.9",

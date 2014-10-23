@@ -1,8 +1,8 @@
 /**
  * 
- * @module User Model
+ * @module User
  * @author Greg Babula [gbabula@gmail.com]
- * @description
+ * @description primary user model
  * 
  */
 
@@ -22,11 +22,15 @@ var reservedUsername     = require('../../app/scripts/userConfig').reserved;
 
 // var db = mongodb.init('cloudsquare', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
 var db = mongodb.init('cloudsqmain', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
+
+// list -> test data
+// users -> real data
 var collection = 'list';
 // var collection = 'users';
 
 var users = [];
 var localStrategy;
+
 
 /**
  * 

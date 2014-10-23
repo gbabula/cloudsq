@@ -1,14 +1,9 @@
-/*
-
-    Cloudsq
-
-    directives/gravatar-directive.js
-
-    Written by Jim Lavin
-    http://codingsmackdown.tv
-
-*/
-
+/**
+ * 
+ * @module gravatar-directive
+ * @author Jim Lavin
+ * 
+ */
 
 'use strict';
 

@@ -38,16 +38,15 @@
     CloudSquare is a minimal user platform.
 
 
-
     /* TEAM */
     
     Greg Babula
     Founder / Lead Developer
 
 
-
     /* ADVISORY BOARD */
 
     Joe Farro
     Lee Bob Johnson
+
 

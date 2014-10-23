@@ -3,6 +3,7 @@
  * @module user-settings
  * @author Greg Babula [gbabula@gmail.com]
  * @description
+ * 
  * @todo add functionality 
  * 
  */

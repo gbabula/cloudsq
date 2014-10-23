@@ -120,10 +120,9 @@ module.exports = function(app) {
 /**
  *
  * @function ensureAuthenticated
- * @param {} req
- * @param {} res
- * @param {} next
- * @description
+ * @param {Object} req
+ * @param {Object} res
+ * @param {Function} next
  * 
  */
 function ensureAuthenticated(req, res, next) {
@@ -139,10 +138,9 @@ function ensureAuthenticated(req, res, next) {
 /**
  *
  * @function ensureAuthorized
- * @param {} req
- * @param {} res
- * @param {} next
- * @description
+ * @param {Object} req
+ * @param {Object} res
+ * @param {Function} next
  * 
  */
 function ensureAuthorized(req, res, next) {

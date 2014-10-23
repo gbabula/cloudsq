@@ -1,10 +1,9 @@
-/*
-
-	Cloudsq
-
-    filters/filters.js
-
-*/
+/**
+ * 
+ * @module filters
+ * @author Greg Babula [gbabula@gmail.com]
+ * 
+ */
 
 'use strict';
 

@@ -22,7 +22,6 @@ module.exports = {
      * @param {Object} req
      * @param {Object} res
      * @param {Function} next
-     * @description 
      *
      */
     register: function(req, res, next) {
@@ -66,7 +65,6 @@ module.exports = {
      * @param {Object} req
      * @param {Object} res
      * @param {Function} next
-     * @description 
      *
      */
     login: function(req, res, next) {
@@ -104,7 +102,6 @@ module.exports = {
      * @method logout
      * @param {Object} req
      * @param {Object} res
-     * @description 
      *
      */
     logout: function(req, res) {

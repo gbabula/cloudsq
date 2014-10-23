@@ -1,11 +1,11 @@
-/*
-
-    Cloudsq
-
-    directives/directives.js
-
-*/
-
+/**
+ * 
+ * @module directives
+ * @author Greg Babula [gbabula@gmail.com]
+ * 
+ * @todo documentation & cleanup/refactor
+ * 
+ */
 
 'use strict';
 

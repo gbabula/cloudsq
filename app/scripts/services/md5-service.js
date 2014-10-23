@@ -1,10 +1,9 @@
-/*
-
-    Cloudsq
-
-    services/md5-service.js
-
-*/
+/**
+ * 
+ * @module md5-service
+ * @author Jim Lavin
+ * 
+ */
 
 // http://kevin.vanzonneveld.net
 // +   original by: Webtoolkit.info (http://www.webtoolkit.info/)

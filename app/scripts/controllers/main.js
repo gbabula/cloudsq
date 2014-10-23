@@ -4,8 +4,9 @@
  * @author Greg Babula [gbabula@gmail.com]
  * @description main app controller
  * 
+ * @todo documentation & cleanup
+ * 
  */
-
 
 'use strict';
 
