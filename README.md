@@ -23,13 +23,13 @@ bower install && npm install
 
 ### Server
 
-Backend Server
+#####Backend Server:
 
 ```
 node server
 ```
 
-Client Server with Live Reload
+#####Client Server with Live Reload:
 
 ```
 grunt server
