@@ -2,7 +2,9 @@
 
 > A minimal user platform.
 
-Style Guide [https://github.com/airbnb/javascript](https://github.com/airbnb/javascript)
+[The Making of CloudSquare](https://medium.com/@gregbabula/the-making-of-cloudsquare-3d976d00ed30)
+
+[Style Guide](https://github.com/airbnb/javascript)
 
 
 * * *
@@ -23,16 +25,8 @@ bower install && npm install
 
 ### Server
 
-#####Backend Server:
-
 ```
-node server
-```
-
-#####Client Server with Live Reload:
-
-```
-grunt server
+npm run start
 ```
 
 
