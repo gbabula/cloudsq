@@ -1,24 +1,40 @@
 {
-  "node": true,
+  "indent": 4,
+  "plusplus": false,
+
+  "eqeqeq": true,
+  "smarttabs": true,
+  "curly": false,
+  "forin": false,
+  "latedef": false,
+  "newcap": true,
+  "strict": true,
+  "trailing": true,
+  "noempty": true,
+
+  "asi": false,
+  "boss": false,
+  "debug": true,
+  "evil": false,
+  "globalstrict": false,
+  "laxbreak": false,
+  "laxcomma": false,
+  "onecase": false,
+  "proto": false,
+  "smarttabs": false,
+  "supernew": false,
+
+  "node": "true
   "browser": true,
+  "devel": true,
+  "jquery": false,
   "es5": true,
   "esnext": true,
   "bitwise": true,
-  "camelcase": true,
-  "curly": true,
-  "eqeqeq": true,
-  "immed": true,
-  "indent": 4,
-  "latedef": true,
-  "newcap": true,
-  "noarg": true,
-  "quotmark": "single",
-  "regexp": true,
-  "undef": true,
-  "unused": true,
-  "strict": true,
-  "trailing": true,
-  "smarttabs": true,
+
+  "onevar": true,
+  "es3": true
+
   "globals": {
     "angular": false
   }

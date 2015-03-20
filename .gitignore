@@ -1,7 +1,21 @@
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Node Files #
+##############
 node_modules
+npm-debug.log
+
+# Project Files #
+#################
 dist
 .tmp
-.sass-cache
-.DS_Store
-app/components
-app/bower_components
+.todo
+.idea
+/build
+/src/static/bundle.js
+/src/static/bundle.css
