@@ -1,9 +1,23 @@
 {
   "name": "CloudSquare",
+  "version": "0.3.0",
   "description": "CloudSquare is a minimal user platform.",
   "author": "Greg Babula",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbabula/cloudsq"
+  },
+  "bugs": {
+    "url": "https://github.com/gbabula/cloudsq/issues"
+  },
+  "keywords": [
+    "user platform",
+    "mean",
+    "angular",
+    "node"
+  ],
   "homepage": "http://cloudsq.com",
-  "version": "0.3.0",
   "dependencies": {
     "express": "*",
     "connect": "*",
