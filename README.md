@@ -46,6 +46,7 @@ grunt build
 
 ### TODO
 
+* [ ] Figure out a better DB solution
 * [ ] Fix initial data load issue 
 * [ ] Setup user service
 * [ ] Fix user square edit
