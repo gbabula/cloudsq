@@ -33,7 +33,7 @@
   "bitwise": true,
 
   "onevar": true,
-  "es3": true
+  "es3": true,
 
   "globals": {
     "angular": false
