@@ -20,13 +20,9 @@ var banedUsername        = require('../../app/scripts/userConfig').banned;
 var reservedUsername     = require('../../app/scripts/userConfig').reserved;
 
 
-// var db = mongodb.init('cloudsquare', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
-var db = mongodb.init('cloudsqmain', 'PL9agN5Yt_9suIEYRQPNn5Z3x2vxlGZj');
+var db = mongodb.init('cloudsquare', 'xxydQzl_CxzcdncUA7mzkxry37vG3-ZB');
 
-// list -> test data
-// users -> real data
-var collection = 'list';
-// var collection = 'users';
+var collection = 'users';
 
 var users = [];
 var localStrategy;
