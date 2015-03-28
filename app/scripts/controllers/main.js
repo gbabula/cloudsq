@@ -12,7 +12,7 @@
 
 
 angular.module('cloudsqApp')
-    .controller('AppCtrl', function($rootScope, $scope, $location, $window, Auth, Users) {
+    .controller('AppCtrl', function($rootScope, $scope, $location, $window, Auth) {
 
         $rootScope.footerStatus = 'active';
         $rootScope.searchStatus = 'active';
@@ -24,23 +24,6 @@ angular.module('cloudsqApp')
         var safeApply = function(scope, fn) {
             (scope.$$phase || scope.$root.$$phase) ? fn() : scope.$apply(fn);
         };
-
-        Users.poll(function(data) {
-
-            Users.list = data;
-            Users.count = data.length;
-
-            console.log('----------------------');
-            console.log('Poll Users');
-            console.log(Users.list, Users.count);
-            console.log('----------------------');
-            console.log('Current User:', $rootScope.user);
-            console.log('----------------------');
-
-            $rootScope.userCount = Users.count;
-            $rootScope.loading = false;
-
-        });
 
         $scope.currentPage = function() {
 

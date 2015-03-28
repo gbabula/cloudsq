@@ -17,16 +17,31 @@ angular.module('cloudsqApp')
 
         $scope.csUserLimit = 25;
 
-        if (!Users.count) {
+        Users.poll(function(data) {
 
-            $rootScope.error = 'Failed to fetch squares :-(';
-            $rootScope.loading = false;
+            Users.list = data;
+            Users.count = data.length;
 
-        } else {
+            console.log('----------------------');
+            console.log('Poll Users');
+            console.log(Users.list, Users.count);
+            console.log('----------------------');
+            console.log('Current User:', $rootScope.user);
+            console.log('----------------------');
 
-            $scope.users = _.shuffle(Users.list);
-            $scope.usersInitialized = true;
+            if (!Users.count) {
 
-        }
+                $rootScope.error = 'Failed to fetch squares :-(';
+                $rootScope.loading = false;
+
+            } else {
+
+                $scope.users = _.shuffle(Users.list);
+                $scope.usersInitialized = true;
+                $rootScope.userCount = Users.count;
+
+            }
+
+        });
 
     });

@@ -46,7 +46,7 @@ grunt build
 
 ### TODO
 
-* [ ] Fix initial data load issue 
+* [x] Fix initial data load issue 
 * [ ] Setup user service
 * [ ] Fix user square edit
 * [ ] Fix user private profile / editor
