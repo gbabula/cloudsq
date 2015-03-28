@@ -16,6 +16,7 @@ angular.module('cloudsqApp')
 
         $rootScope.footerStatus = 'active';
         $rootScope.searchStatus = 'active';
+        $rootScope.year = new Date().getFullYear();
 
         var currentRoute = function(loc) {
             return loc.path().substring(1) || 'home';
