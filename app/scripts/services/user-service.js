@@ -13,7 +13,7 @@
 
 var services = angular.module('cloudsqApp-user.services', []);
 
-services.factory('User', function() {
+services.factory('User', function($http) {
 
     return {
         /**
@@ -26,7 +26,7 @@ services.factory('User', function() {
          */
         destroy: function(user, success, error) {
 
-            success();
+            $http.post('/destroy', user).success(success).error(error);
 
         },
         /**
@@ -39,7 +39,7 @@ services.factory('User', function() {
          */
         update: function(user, success, error) {
 
-            success();
+            $http.post('/update', user).success(success).error(error);
 
         }
     };

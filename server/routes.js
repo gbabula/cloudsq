@@ -44,6 +44,12 @@ var routes = [
         accessLevel: accessLevels.user
     },
     {
+        path: '/destroy/*',
+        httpMethod: 'POST',
+        middleware: [ensureAuthenticated, ensureAuthorized],
+        accessLevel: accessLevels.user
+    },
+    {
         path: '/update/*',
         httpMethod: 'POST',
         middleware: [ensureAuthenticated, ensureAuthorized],
