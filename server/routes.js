@@ -6,20 +6,18 @@
  * 
  */
 
-
 'use strict';
-
 
 var _            = require('underscore');
 var path         = require('path');
 var passport     = require('passport');
+var User         = require('./models/User');
 var AuthCtrl     = require('./controllers/auth');
 var UserCtrl     = require('./controllers/user');
-var User         = require('./models/User.js');
+var ProfileCtrl  = require('./controllers/profile');
 var userConfig   = require('../app/scripts/userConfig');
 var userRoles    = require('../app/scripts/routingConfig').userRoles;
 var accessLevels = require('../app/scripts/routingConfig').accessLevels;
-
 
 var routes = [
     {
@@ -44,15 +42,15 @@ var routes = [
         accessLevel: accessLevels.user
     },
     {
-        path: '/destroy/*',
+        path: '/destroy',
         httpMethod: 'POST',
-        middleware: [ensureAuthenticated, ensureAuthorized],
+        middleware: [ProfileCtrl.update],
         accessLevel: accessLevels.user
     },
     {
-        path: '/update/*',
+        path: '/update',
         httpMethod: 'POST',
-        middleware: [ensureAuthenticated, ensureAuthorized],
+        middleware: [ProfileCtrl.update],
         accessLevel: accessLevels.user
     },
     {

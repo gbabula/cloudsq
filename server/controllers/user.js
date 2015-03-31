@@ -8,11 +8,9 @@
 
 'use strict';
 
-
 var _         = require('underscore');
-var User      = require('../models/User.js');
+var User      = require('../models/User');
 var userRoles = require('../../app/scripts/routingConfig').userRoles;
-
 
 module.exports = {
 
