@@ -8,7 +8,6 @@
 
 'use strict';
 
-
 var services = angular.module('cloudsqApp-users.services', []);
 
 services.factory('Users', function($timeout, $resource, poller) {

@@ -7,7 +7,6 @@
 
 'use strict';
 
-
 (function(exports){
 
     exports.base = {

@@ -2,14 +2,11 @@
  * 
  * @module user-service
  * @author Greg Babula [gbabula@gmail.com]
- * @description
- * 
- * @todo set up user methods
+ * @description user profile service
  * 
  */
 
 'use strict';
-
 
 var services = angular.module('cloudsqApp-user.services', []);
 

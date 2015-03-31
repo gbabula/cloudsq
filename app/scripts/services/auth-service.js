@@ -6,9 +6,7 @@
  * 
  */
 
-
 'use strict';
-
 
 var services = angular.module('cloudsqApp-auth.services', []);
 
@@ -109,4 +107,5 @@ services.factory('Auth', function($http, $rootScope, $cookieStore) {
         accessLevels: accessLevels,
         userRoles: userRoles
     };
+
 });

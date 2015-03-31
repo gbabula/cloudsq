@@ -7,7 +7,6 @@
 
 'use strict';
 
-
 var app = angular.module('cloudsqApp', [
     'ngRoute',
     'ngResource',
@@ -55,6 +54,14 @@ app.config(['$routeProvider', '$locationProvider', '$httpProvider',
         $routeProvider.when('/edit/:cloudSquareUserName', {
             templateUrl:    '/views/partials/square-detail.html',
             controller:     'EditSqCtrl',
+            access:         access.user
+        });
+
+        $routeProvider.when('/update', {
+            access:         access.user
+        });
+
+        $routeProvider.when('/destroy', {
             access:         access.user
         });
 
