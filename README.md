@@ -47,7 +47,8 @@ grunt build
 ### TODO
 
 * [x] Fix initial data load issue 
-* [ ] Setup user service
+* [x] Setup user service
+* [x] Finish serverside development of user service
 * [ ] Fix user square edit
 * [ ] Fix user private profile / editor
 * [ ] Fix delete chunk functionality 
