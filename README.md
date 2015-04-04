@@ -48,7 +48,7 @@ grunt build
 
 * [x] Fix initial data load issue 
 * [x] Setup user service
-* [x] Finish serverside development of user service
+* [ ] Finish serverside development of user service
 * [ ] Fix user square edit
 * [ ] Fix user private profile / editor
 * [ ] Fix delete chunk functionality 
