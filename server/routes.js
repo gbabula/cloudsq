@@ -44,7 +44,7 @@ var routes = [
     {
         path: '/destroy',
         httpMethod: 'POST',
-        middleware: [ProfileCtrl.update],
+        middleware: [ProfileCtrl.destroy],
         accessLevel: accessLevels.user
     },
     {

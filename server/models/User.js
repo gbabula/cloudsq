@@ -10,20 +10,18 @@
 'use strict';
 
 
-var mongodb              = require('mongolab-provider');
 var _                    = require('underscore');
+var mongodb              = require('mongolab-provider');
 var https                = require('https');
+var uuid                 = require('node-uuid');
 var passport             = require('passport');
 var LocalStrategy        = require('passport-local').Strategy;
 var userRoles            = require('../../app/scripts/routingConfig').userRoles;
 var banedUsername        = require('../../app/scripts/userConfig').banned;
 var reservedUsername     = require('../../app/scripts/userConfig').reserved;
 
-
 var db = mongodb.init('cloudsquare', 'xxydQzl_CxzcdncUA7mzkxry37vG3-ZB');
-
 var collection = 'users';
-
 var users = [];
 var localStrategy;
 
@@ -52,8 +50,8 @@ function addUser(user, callback) {
         return callback('UserNameBanned');
     }
 
+    user.id = uuid.v4();
     user.role = userRoles.user;
-    // user.points = ;
 
     users.push(user);
 
@@ -106,43 +104,53 @@ function indexAll() {
  * @description
  * 
  */
-// function update() {
+function update(user, callback) {
 
-    // db.update(collection, user, function(err, data) {
+    if (!findById(user.id)) {
+        return callback('InvalidUserId');
+    }
 
-        // callback(null, data);
+    db.updateId(collection, user.id, user, function(err, data) {
 
-    // });
+        callback(null, data);
 
-// }
+    });
+
+}
 
 /**
  * 
- * @function deleteId
+ * @function destroy
  * @description
  * 
  */
-// function deleteId(id) {
+function destroy(user, callback) {
 
-    // db.deleteId(collection, id, function(err, data) {
+    db.deleteId(collection, user.id, function(err, data) {
 
-        // callback(null, data);
+        // TODO
+        // fix document not found issue
+        console.log('destroy');
+        console.log(err);
+        console.log(data);
 
-    // });
+        callback(null, data);
 
-// }
+    });
+
+}
 
 /**
  * 
  * @function findById
- * @param {} id
+ * @param {String} id
  * @description 
  * @returns {}
  * 
  */
 function findById(id) {
 
-    return _.clone(_.find(users, function(user) { return user._id === id; }));
+    return _.clone(_.find(users, function(user) { return user.id === id; }));
 
 }
 
@@ -202,7 +210,7 @@ function filterUsername(username) {
  */
 function serializeUser(user, done) {
 
-    done(null, user._id);
+    done(null, user.id);
 
 };
 
@@ -256,6 +264,8 @@ localStrategy = new LocalStrategy(
 
 module.exports = {
     addUser: addUser,
+    update: update,
+    destroy: destroy,
     findAll: findAll,
     indexAll: indexAll,
     findById: findById,

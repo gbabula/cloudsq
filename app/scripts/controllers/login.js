@@ -31,7 +31,7 @@ angular.module('cloudsqApp')
             },
             function(err) {
 
-                $rootScope.error = 'Failed to login: ' + err + '';
+                $rootScope.error = 'Failed to login: ' + err;;
 
             });
 

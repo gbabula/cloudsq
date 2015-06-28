@@ -31,7 +31,7 @@ angular.module('cloudsqApp')
 
             if (!Users.count) {
 
-                $rootScope.error = 'Failed to fetch squares :-(';
+                $rootScope.error = 'Failed to fetch squares :-[';
                 $rootScope.loading = false;
 
             } else {

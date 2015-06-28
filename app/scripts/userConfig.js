@@ -20,9 +20,7 @@
             like: [],
             dislike: []
         },
-        _id: {
-            $oid: ''
-        }
+        id: 0
     };
 
     exports.reserved = [

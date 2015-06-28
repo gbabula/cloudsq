@@ -28,27 +28,22 @@ angular.module('cloudsqApp')
 
         };
 
-        // $scope.destroy = function() {
-
-            // User.destroy();
-
-            // if ($window.confirm('Are you sure you want to delete\nthis account and all data?')) {
-                // _this.original.destroy(function() {
-                    // $location.path('/logout');
-                // });
-            // }
-
-        // };
-
+        /**
+         *
+         * @function save
+         *
+         */
         $scope.save = function() {
 
-            User.update({}, function() {
-                console.log('test');
-            });
+            User.update($scope.user, function(res) {
 
-            // $scope.cloudSquareUser.update(function() {
-                // $location.path('/user/' + $scope.user.username + '');
-            // });
+                $location.path('/user/' + $scope.user.username + '/');
+
+            }, function(err) {
+
+                $rootScope.error = 'Failed to update: ' + err;
+
+            });
 
         };
 
